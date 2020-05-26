@@ -1,0 +1,16 @@
+{
+  "coc.preferences.formatOnSaveFiletypes": [
+    "javascript",
+    "typescript",
+    "vue",
+    "cs",
+    "css",
+    "html",
+    "json"
+  ],
+  "prettier.disableSuccessMessage": true,
+  "diagnostic.warningSign": "••",
+  "tslint.autoFixOnSave": false,
+  "eslint.autoFixOnSave": false,
+  "eslint.filetypes": ["javascript"]
+}

@@ -1,2 +1,4 @@
 .tmux/plugins/
 .config/fish/fish_variables
+.config/nvim/autoload/plugged/
+.config/nvim/session/
