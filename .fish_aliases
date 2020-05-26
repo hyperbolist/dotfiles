@@ -1,0 +1,18 @@
+alias ..='cd ..'
+alias \+x='chmod +x'
+alias ag=tag
+alias cat=bat
+alias dotgit='/usr/bin/env git --git-dir=$HOME/.dotgit --work-tree=$HOME'
+alias gd='git diff'
+alias gs='git status'
+alias k=kubectl
+alias la='ls -A'
+alias lg=lazygit
+alias ll='ls -Al'
+alias psgrep='pgrep -fl'
+alias tag='/usr/local/bin/tag "$argv"; source /tmp/tag_aliases 2>/dev/null'
+alias tf=terraform
+alias tmux='tmux -2'
+alias uuidgen='uuidgen | tr "[:upper:]" "[:lower:]"'
+alias vim=nvim
+alias yolog='set TERM xterm; /usr/local/bin/yolog'
