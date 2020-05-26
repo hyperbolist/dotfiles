@@ -1,0 +1,58 @@
+# adapted from https://github.com/jimeh/tmux-themepack
+# Status update interval
+set -g status-interval 1
+
+# Basic status bar colors
+set -g status-style bg=colour236,fg=colour8
+
+# Left side of status bar
+set -g status-left-style bg=colour236,fg=colour8
+set -g status-left-length 40
+set -g status-left "#[fg=colour8]#S #[fg=white]» #[fg=colour15]#I #[fg=colour8]#P "
+
+# Right side of status bar
+set -g status-right-style bg=colour236,fg=colour8
+set -g status-right-length 40
+set -g status-right "#[fg=colour8]#H #[fg=white]« #[fg=colour8]%a %b %d #[fg=colour15]%I:%M #[fg=colour8]%p"
+
+# Window status
+set -g window-status-format " #I:#W#F "
+set -g window-status-current-format " #I:#W#F "
+
+# Current window status
+set -g window-status-current-style bg=colour8,fg=colour15
+
+# Last window status
+set -g window-status-last-style bg=colour236,fg=colour15
+
+# Window with activity status
+set -g window-status-activity-style bg=colour236,fg=yellow
+
+# Window separator
+set -g window-status-separator ""
+
+# Window status alignment
+set -g status-justify left
+
+# Pane border
+set -g pane-border-style fg=colour240,bg=colour236
+
+# Active pane border
+set -g pane-active-border-style bg=colour236,fg=colour7
+
+# Pane number indicator
+set -g display-panes-colour default
+set -g display-panes-active-colour default
+
+# Clock mode
+set -g clock-mode-colour red
+set -g clock-mode-style 24
+
+# Message
+set -g message-style bg=yellow,fg=colour236
+
+# Command message
+set -g message-command-style bg=yellow,fg=colour236
+
+# Mode
+set -g mode-style bg=yellow,fg=colour236
