@@ -1,0 +1,6 @@
+[aws]
+region = false
+
+[kubernetes]
+disabled = false
+style = "yellow"
