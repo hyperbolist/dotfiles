@@ -1,0 +1,10 @@
+auth:
+    method: pgi-ad
+aws:
+    default-profile: true
+    ttl: 8h
+    use-profiles: true
+    web-ttl: 8h
+vault-address: https://vault.pgi-tools.com
+vault-initial-token-duration: 8h
+vault-username: esherman
