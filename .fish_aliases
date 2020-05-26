@@ -1,6 +1,7 @@
 alias ..='cd ..'
 alias \+x='chmod +x'
 alias ag=tag
+alias bat='bat --theme="base16"'
 alias cat=bat
 alias dotgit='/usr/bin/env git --git-dir=$HOME/.dotgit --work-tree=$HOME'
 alias gd='git diff'
