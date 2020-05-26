@@ -3,11 +3,11 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
-[includeIf "gitdir:~/.dotgit"]
+[includeIf "gitdir:/Users/esherman/.dotgit"]
     path = .gitconfig-personal
-[includeIf "gitdir:~/code/pgi/"]
+[includeIf "gitdir:/Users/esherman/code/pgi/"]
     path = .gitconfig-pgi
-[includeIf "gitdir:~/code/personal/"]
+[includeIf "gitdir:/Users/esherman/code/personal/"]
     path = .gitconfig-personal
 [core]
 	excludesfile = ~/.gitignore_global
