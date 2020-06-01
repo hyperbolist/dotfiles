@@ -13,6 +13,9 @@ function kubectl -a cmd -d 'kubectl controls the Kubernetes cluster manager.'
     case context-names
       command kubectl config get-contexts --output=name
 
+    case ns
+      kubectl namespace $argv[2]
+
     case namespace
       if set -q argv[2]
         command kubectl config set-context --current --namespace "$argv[2]"
