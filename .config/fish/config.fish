@@ -7,6 +7,9 @@ end
 # we do this almost exclusively for ranger
 set PATH /Library/Frameworks/Python.framework/Versions/3.7/bin $PATH
 
+# for kubectl krew
+set PATH $HOME/.krew/bin $PATH
+
 # sensible aliases
 source ~/.fish_aliases
 
