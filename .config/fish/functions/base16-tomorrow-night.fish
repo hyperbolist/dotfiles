@@ -90,6 +90,8 @@ function base16-tomorrow-night -d "Tomorrow Night"
     put_template_custom Pk c5c8c6 # selected text color
     put_template_custom Pl c5c8c6 # cursor
     put_template_custom Pm 1d1f21 # cursor text
+  else if test -n "$KITTY_WINDOW_ID"
+    ## for some reason this misbehaves with kitty
   else
     put_template_var 10 $colorfg
     if [ "$BASE16_SHELL_SET_BACKGROUND" != false ]
