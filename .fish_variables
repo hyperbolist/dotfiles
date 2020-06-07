@@ -1,6 +1,11 @@
 set -g fish_key_bindings fish_vi_key_bindings
 set fish_greeting ""
-set -gx PATH $HOME/bin $PATH
+
+set -U fish_user_paths /Library/Frameworks/Python.framework/Versions/3.7/bin $fish_user_paths
+set -U fish_user_paths $HOME/.krew/bin $fish_user_paths
+set -U fish_user_paths $HOME/go/bin $fish_user_paths
+set -U fish_user_paths $HOME/bin $fish_user_paths
+
 set -gx EDITOR /usr/local/bin/nvim
 set -gx PAGER less -FiRswX
 set -gx MANPAGER "sh -c 'col -bx | bat -l man -p'"
