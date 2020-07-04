@@ -19,6 +19,7 @@ if has('autocmd') && !exists('filetype_autocommands_loaded')
   autocmd FileType vue setlocal ts=2 sts=2 sw=2 expandtab
   autocmd FileType html setlocal ts=2 sts=2 sw=2 expandtab
   autocmd FileType cs setlocal ts=4 sts=4 sw=4 expandtab
+  autocmd FileType asm setlocal ts=8 sts=8 sw=8 noexpandtab
 
   autocmd BufNewFile,BufRead *.ejs set filetype=html
 
