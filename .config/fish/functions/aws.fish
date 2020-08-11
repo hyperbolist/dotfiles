@@ -41,6 +41,17 @@ function aws -a cmd -d 'Universal CLI for AWS'
         echo "AWS_PROFILE not set, and no AWS creds in environment"
       end
 
+    case ecr-login
+      if set -q AWS_PROFILE; or set -q AWS_ACCESS_KEY_ID
+        aws ecr get-login-password \
+          --region (aws region) \
+          | docker login \
+            --username AWS \
+            --password-stdin (aws sts get-caller-identity --output=text | awk '{ print $1 }').dkr.ecr.(aws region).amazonaws.com
+      else
+        echo "AWS_PROFILE not set, and no AWS creds in environment"
+      end
+
     case '*'
       command aws $argv
   end
