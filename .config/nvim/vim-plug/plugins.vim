@@ -11,7 +11,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   Plug 'OmniSharp/omnisharp-vim'          " OmniSharp
   Plug 'Quramy/vim-js-pretty-template'    " Colorizes JS template strings
   Plug 'Shougo/echodoc.vim'               " Provides additional feedback options for CoC operations
-  Plug 'airblade/vim-rooter'              " cd to the project root (.git) for the given buffer context
+  Plug 'airblade/vim-rooter', {'commit': 'eef9813'}  " cd to the project root (.git) for the given buffer context
   Plug 'chriskempson/base16-vim'          " Colorscheme
   Plug 'godlygeek/tabular'                " Text Alignment
   Plug 'jeetsukumaran/vim-filebeagle'     " Bare-minimum file picker
