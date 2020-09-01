@@ -1,7 +1,7 @@
 auth:
     method: pgi-ad
 aws:
-    default-profile: true
+    default-profile: false
     ttl: 8h
     use-profiles: true
     web-ttl: 8h
