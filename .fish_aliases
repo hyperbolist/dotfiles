@@ -5,6 +5,7 @@ alias bat='bat --theme="base16"'
 alias cat=bat
 alias dotgit='/usr/bin/env git --git-dir=$HOME/.dotgit --work-tree=$HOME'
 alias gd='git diff'
+alias gl='git log --all --decorate --oneline --graph'
 alias gs='git status'
 alias k=kubectl
 alias la='ls -A'
@@ -16,4 +17,4 @@ alias tf=terraform
 alias tmux='tmux -2'
 alias uuidgen='uuidgen | tr "[:upper:]" "[:lower:]"'
 alias vim=nvim
-alias yolog='set TERM xterm; /usr/local/bin/yolog'
+alias yolog=gl
