@@ -10,7 +10,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   Plug '/usr/local/opt/fzf'               " FZF binary
   Plug 'Quramy/vim-js-pretty-template'    " Colorizes JS template strings
   Plug 'brooth/far.vim'                   " Find and Replace
-  Plug 'airblade/vim-gitgutter'           " git diff in sign column
   Plug 'airblade/vim-rooter'              " cd to the project root (.git) for the given buffer context
   Plug 'chriskempson/base16-vim'          " Colorscheme
   Plug 'godlygeek/tabular'                " Text Alignment
@@ -22,11 +21,13 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   Plug 'junegunn/goyo.vim'                " Prose mode plugin
   Plug 'junegunn/limelight.vim'           " Prose mode enhancement, darkens other paragraphs
   Plug 'junegunn/rainbow_parentheses.vim' " Rainbow Parens
+  Plug 'lewis6991/gitsigns.nvim'          " modern gitgutter in lua
   Plug 'liuchengxu/vim-which-key'         " Flexible <leader> mapping
   Plug 'liuchengxu/vista.vim'             " Tag browser
   Plug 'mhinz/vim-startify'               " Sessions
   Plug 'neovim/nvim-lspconfig'            " neovim native lsp configuration
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " better syntax highlighting
+  Plug 'nvim-lua/plenary.nvim'            " lua neovim lib
   Plug 'numkil/ag.nvim'                   " Ag classic, results in the quickfix window
   Plug 'preservim/nerdcommenter'          " Flexible (Un)Commenting
   Plug 'ray-x/lsp_signature.nvim'         " lsp signature help

@@ -24,7 +24,7 @@ source $HOME/.config/nvim/plug-config/endwise.vim
 source $HOME/.config/nvim/plug-config/filebeagle.vim
 source $HOME/.config/nvim/plug-config/floaterm.vim
 source $HOME/.config/nvim/plug-config/fzf.vim
-source $HOME/.config/nvim/plug-config/gitgutter.vim
+luafile $HOME/.config/nvim/plug-config/gitsigns.lua
 source $HOME/.config/nvim/plug-config/goyo.vim
 source $HOME/.config/nvim/plug-config/limelight.vim
 luafile $HOME/.config/nvim/plug-config/lspconfig.lua
