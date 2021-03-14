@@ -8,12 +8,15 @@ endif
 call plug#begin('~/.config/nvim/autoload/plugged')
 
   Plug '/usr/local/opt/fzf'               " FZF binary
-  Plug 'OmniSharp/omnisharp-vim'          " OmniSharp
   Plug 'Quramy/vim-js-pretty-template'    " Colorizes JS template strings
-  Plug 'Shougo/echodoc.vim'               " Provides additional feedback options for CoC operations
-  Plug 'airblade/vim-rooter', {'commit': 'eef9813'}  " cd to the project root (.git) for the given buffer context
+  Plug 'brooth/far.vim'                   " Find and Replace
+  Plug 'airblade/vim-gitgutter'           " git diff in sign column
+  Plug 'airblade/vim-rooter'              " cd to the project root (.git) for the given buffer context
   Plug 'chriskempson/base16-vim'          " Colorscheme
   Plug 'godlygeek/tabular'                " Text Alignment
+  Plug 'glepnir/lspsaga.nvim'             " pretty lsp windows
+  Plug 'hrsh7th/nvim-compe', {'commit': '2517075' } " neovim native completion
+  Plug 'jiangmiao/auto-pairs'             " auto pairs for '(' '[' '{'
   Plug 'jeetsukumaran/vim-filebeagle'     " Bare-minimum file picker
   Plug 'junegunn/fzf.vim'                 " FZF plugin
   Plug 'junegunn/goyo.vim'                " Prose mode plugin
@@ -22,9 +25,11 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   Plug 'liuchengxu/vim-which-key'         " Flexible <leader> mapping
   Plug 'liuchengxu/vista.vim'             " Tag browser
   Plug 'mhinz/vim-startify'               " Sessions
-  Plug 'neoclide/coc.nvim', {'branch': 'release'} " Intellisense and more, can't really live without it now
+  Plug 'neovim/nvim-lspconfig'            " neovim native lsp configuration
+  Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " better syntax highlighting
   Plug 'numkil/ag.nvim'                   " Ag classic, results in the quickfix window
   Plug 'preservim/nerdcommenter'          " Flexible (Un)Commenting
+  Plug 'ray-x/lsp_signature.nvim'         " lsp signature help
   Plug 'sgur/vim-editorconfig'            " Honor .editorconfig
   Plug 'sheerun/vim-polyglot'             " Modernized Syntax Support
   Plug 'tpope/vim-commentary'             " Easy (Un)Commenting
@@ -39,24 +44,3 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   Plug 'voldikss/vim-floaterm'            " Floating Terminal, for momentary tools
 
 call plug#end()
-
-" list coc extensions explicitly here, since they're kind of like plugins
-let g:coc_global_extensions = [
-  \ 'coc-cfn-lint',
-  \ 'coc-docker',
-  \ 'coc-eslint',
-  \ 'coc-git',
-  \ 'coc-json',
-  \ 'coc-marketplace',
-  \ 'coc-omnisharp',
-  \ 'coc-pairs',
-  \ 'coc-prettier',
-  \ 'coc-sh',
-  \ 'coc-snippets',
-  \ 'coc-solargraph',
-  \ 'coc-tslint',
-  \ 'coc-tsserver',
-  \ 'coc-vimlsp',
-  \ 'coc-yaml',
-  \ 'coc-yank',
-  \ ]

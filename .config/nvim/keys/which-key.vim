@@ -26,17 +26,11 @@ autocmd  FileType which_key set laststatus=0 noshowmode noruler
 " Single mappings
 let g:which_key_map['/'] = [ '<Plug>NERDCommenterToggle'  , 'comment' ]
 let g:which_key_map['.'] = [ ':e $MYVIMRC'                , 'open init' ]
-let g:which_key_map[';'] = [ ':Commands'                  , 'commands' ]
 let g:which_key_map['='] = [ '<C-W>='                     , 'balance windows' ]
 let g:which_key_map[','] = [ 'Startify'                   , 'start screen' ]
-let g:which_key_map['d'] = [ ':bd'                        , 'delete buffer']
-let g:which_key_map['f'] = [ ':Files'                     , 'search files' ]
 let g:which_key_map['h'] = [ '<C-W>s'                     , 'split below']
-let g:which_key_map['q'] = [ 'q'                          , 'quit' ]
 let g:which_key_map['S'] = [ ':SSave'                     , 'save session' ]
-let g:which_key_map['T'] = [ ':Rg'                        , 'search text' ]
 let g:which_key_map['v'] = [ '<C-W>v'                     , 'split right']
-let g:which_key_map['w'] = [ 'w'                          , 'write' ]
 let g:which_key_map['z'] = [ 'Goyo'                       , 'zen' ]
 
 " Group mappings
@@ -50,25 +44,33 @@ let g:which_key_map.a = {
       \ 'v' : [':Vista!!'                , 'toggle tag viewer'],
       \ }
 
-" b is for buffer
-let g:which_key_map.b = {
-      \ 'name' : '+buffer' ,
-      \ '1' : ['b1'        , 'buffer 1']        ,
-      \ '2' : ['b2'        , 'buffer 2']        ,
-      \ 'd' : ['bd'        , 'delete-buffer']   ,
-      \ 'f' : ['bfirst'    , 'first-buffer']    ,
-      \ 'h' : ['Startify'  , 'home-buffer']     ,
-      \ 'l' : ['blast'     , 'last-buffer']     ,
-      \ 'n' : ['bnext'     , 'next-buffer']     ,
-      \ 'p' : ['bprevious' , 'previous-buffer'] ,
-      \ '?' : ['Buffers'   , 'fzf-buffer']      ,
+" F is for fold
+let g:which_key_map.F = {
+    \ 'name': '+fold',
+    \ 'O' : [':set foldlevel=20', 'open all'],
+    \ 'C' : [':set foldlevel=0', 'close all'],
+    \ 'c' : [':foldclose', 'close'],
+    \ 'o' : [':foldopen', 'open'],
+    \ '1' : [':set foldlevel=1', 'level1'],
+    \ '2' : [':set foldlevel=2', 'level2'],
+    \ '3' : [':set foldlevel=3', 'level3'],
+    \ '4' : [':set foldlevel=4', 'level4'],
+    \ '5' : [':set foldlevel=5', 'level5'],
+    \ '6' : [':set foldlevel=6', 'level6']
+    \ }
+
+" f is for find and replace
+let g:which_key_map.f = {
+      \ 'name' : '+find_replace' ,
+      \ 'f' : [':Farr --source=vimgrep'    , 'file'],
+      \ 'p' : [':Farr --source=rgnvim'     , 'project'],
       \ }
 
 " s is for search
 let g:which_key_map.s = {
       \ 'name' : '+search' ,
       \ '/' : [':History/'     , 'history'],
-      \ ';' : [':Commands'     , 'commands'],
+      \ ':' : [':Commands'     , 'commands'],
       \ 'a' : [':Ag'           , 'text Ag'],
       \ 'b' : [':BLines'       , 'current buffer'],
       \ 'B' : [':Buffers'      , 'open buffers'],
@@ -118,50 +120,38 @@ let g:which_key_map.g = {
       \ }
 
 " l is for language server protocol
+"      \ 'd' : [':Telescope lsp_document_diagnostics' , 'document diagnostics'],
+"      \ 'D' : [':Telescope lsp_workspace_diagnostics', 'workspace diagnostics'],
+"      \ 'q' : [':Telescope quickfix'                 , 'quickfix'],
+"      \ 's' : [':Telescope lsp_document_symbols'     , 'document symbols'],
+"      \ 'S' : [':Telescope lsp_workspace_symbols'    , 'workspace symbols'],
 let g:which_key_map.l = {
       \ 'name' : '+lsp' ,
-      \ '.' : [':CocConfig'                          , 'config'],
-      \ ';' : ['<Plug>(coc-refactor)'                , 'refactor'],
-      \ 'a' : ['<Plug>(coc-codeaction)'              , 'line action'],
-      \ 'A' : ['<Plug>(coc-codeaction-selected)'     , 'selected action'],
-      \ 'b' : [':CocNext'                            , 'next action'],
-      \ 'B' : [':CocPrev'                            , 'prev action'],
-      \ 'c' : [':CocList commands'                   , 'commands'],
-      \ 'd' : ['<Plug>(coc-definition)'              , 'definition'],
-      \ 'D' : ['<Plug>(coc-declaration)'             , 'declaration'],
-      \ 'e' : [':CocList extensions'                 , 'extensions'],
-      \ 'f' : ['<Plug>(coc-format-selected)'         , 'format selected'],
-      \ 'F' : ['<Plug>(coc-format)'                  , 'format'],
-      \ 'h' : ['<Plug>(coc-float-hide)'              , 'hide'],
-      \ 'i' : ['<Plug>(coc-implementation)'          , 'implementation'],
-      \ 'I' : [':CocList diagnostics'                , 'diagnostics'],
-      \ 'j' : ['<Plug>(coc-float-jump)'              , 'float jump'],
-      \ 'l' : ['<Plug>(coc-codelens-action)'         , 'code lens'],
-      \ 'n' : ['<Plug>(coc-diagnostic-next)'         , 'next diagnostic'],
-      \ 'N' : ['<Plug>(coc-diagnostic-next-error)'   , 'next error'],
-      \ 'o' : ['<Plug>(coc-openlink)'                , 'open link'],
-      \ 'O' : [':CocList outline'                    , 'outline'],
-      \ 'p' : ['<Plug>(coc-diagnostic-prev)'         , 'prev diagnostic'],
-      \ 'P' : ['<Plug>(coc-diagnostic-prev-error)'   , 'prev error'],
-      \ 'q' : ['<Plug>(coc-fix-current)'             , 'quickfix'],
-      \ 'r' : ['<Plug>(coc-rename)'                  , 'rename'],
-      \ 'R' : ['<Plug>(coc-references)'              , 'references'],
-      \ 's' : [':CocList -I symbols'                 , 'references'],
-      \ 't' : ['<Plug>(coc-type-definition)'         , 'type definition'],
-      \ 'u' : [':CocListResume'                      , 'resume list'],
-      \ 'U' : [':CocUpdate'                          , 'update CoC'],
-      \ 'v' : [':Vista!!'                            , 'tag viewer'],
-      \ 'z' : [':CocDisable'                         , 'disable CoC'],
-      \ 'Z' : [':CocEnable'                          , 'enable CoC'],
+      \ 'a' : [':Lspsaga code_action'                        , 'quickfix']            ,
+      \ 'A' : [':Lspsaga range_code_action'                  , 'selected action']     ,
+      \ 'd' : [':execute "lua vim.lsp.buf.definition()"'     , 'goto definition']     ,
+      \ 'D' : [':execute "lua vim.lsp.buf.declaration()"'    , 'goto declaration']    ,
+      \ 'f' : [':LspFormatting'                              , 'format']              ,
+      \ 'H' : [':Lspsaga signature_help'                     , 'signature_help']      ,
+      \ 'i' : [':execute "lua vim.lsp.buf.implementation()"' , 'goto implementation'] ,
+      \ 'I' : [':LspInfo'                                    , 'lsp_info']            ,
+      \ 'l' : [':Lspsaga lsp_finder'                         , 'lsp_finder']          ,
+      \ 'L' : [':Lspsaga show_line_diagnostics'              , 'line_diagnostics']    ,
+      \ 'o' : [':Vista!!'                                    , 'outline']             ,
+      \ 'p' : [':Lspsaga preview_definition'                 , 'preview definition']  ,
+      \ 'r' : [':execute "lua vim.lsp.buf.references()"'     , 'find references']     ,
+      \ 'R' : [':LspRename'                                  , 'rename']              ,
+      \ 'T' : [':LspTypeDefinition'                          , 'type defintion']      ,
+      \ 'x' : [':cclose'                                     , 'close quickfix']      ,
       \ }
 
 " t is for terminal
 let g:which_key_map.t = {
       \ 'name' : '+terminal' ,
+      \ ';' : [':FloatermNew --wintype=normal --height=6'       , 'terminal'],
+      \ 'f' : [':FloatermNew fzf'                               , 'fzf'],
       \ 'g' : [':FloatermNew lazygit'                           , 'git'],
       \ 'd' : [':FloatermNew lazydocker'                        , 'docker'],
-      \ 'n' : [':FloatermNew node'                              , 'node'],
-      \ 'p' : [':FloatermNew python'                            , 'python'],
       \ 'r' : [':FloatermNew ranger'                            , 'ranger'],
       \ 't' : [':FloatermToggle'                                , 'toggle'],
       \ }
