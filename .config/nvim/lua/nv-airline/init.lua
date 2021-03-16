@@ -1,6 +1,18 @@
 -- don't show vim-native mode, let airline show the mode
 vim.o.showmode=false
 
+-- symbols
+vim.cmd([[
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+
+let g:airline_symbols.branch = ''
+let g:airline_symbols.dirty = ' !'
+let g:airline_symbols.notexists = ' ?'
+let g:airline_symbols.readonly = ''
+]])
+
 -- enable powerline fonts, almost certainly requires a patched font
 -- been using Meslo for Powerline for years
 -- switched to MesloLGS Nerd Font Mono to gain some other glyphs
