@@ -10,4 +10,4 @@ vault-initial-token-duration: 8h
 vault-username: esherman
 kube:
     cluster:
-        filter: x.icekube.net
+        filter: icekube.net
