@@ -25,10 +25,13 @@ define_augroups(
         _general_settings = {
             {'TextYankPost', '*', 'lua require(\'vim.highlight\').on_yank({higroup = \'IncSearch\', timeout = 200})'},
         },
-        -- this causes the nvim start message to disappear, but it's worth it
         _corsorline_focus = {
+            -- this causes the nvim start message to disappear, but it's worth it
             {'FocusLost', '*', 'silent lua vim.wo.cursorline=false'},
             {'FocusGained', '*', 'silent lua vim.wo.cursorline=true'},
+        },
+        _resize_panes_on_window_resize = {
+            {'VimResized', '*', 'wincmd ='},
         },
         _help_nav = {
             {'filetype,BufRead', 'help', ':nnoremap <buffer><cr> <c-]>'},
