@@ -25,14 +25,15 @@ autocmd  FileType which_key set laststatus=0 noshowmode noruler
 " Single mappings
 " let g:which_key_map['/'] = [ ':call Comment()'                                 , 'comment' ]
 " let g:which_key_map['/'] = { 'name' : 'comment' }
-let g:which_key_map['/'] = 'which_key_ignore'
+" let g:which_key_map['/'] = 'which_key_ignore'
 let g:which_key_map['?'] = [ ':NvimTreeFindFile'                               , 'find current file' ]
 let g:which_key_map['e'] = [ ':NvimTreeToggle'                                 , 'explorer' ]
-"let g:which_key_map['h'] = [ '<C-W>s'                                          , 'split below']
+let g:which_key_map['f'] = [ ':Telescope find_files'                           , 'find files' ]
+" let g:which_key_map['h'] = [ '<C-W>s'                                          , 'split below']
 let g:which_key_map['n'] = [ ':let @/ = ""'                                    , 'no highlight' ]
 let g:which_key_map['r'] = [ ':RnvimrToggle'                                   , 'ranger' ]
 let g:which_key_map['T'] = [ ':TSHighlightCapturesUnderCursor'                 , 'treesitter highlight' ]
-"let g:which_key_map['v'] = [ '<C-W>v'                                          , 'split right']
+" let g:which_key_map['v'] = [ '<C-W>v'                                          , 'split right']
 let g:which_key_map['z'] = [ 'Goyo'                                            , 'zen' ]
 
 " Group mappings
@@ -104,41 +105,41 @@ let g:which_key_map.F = {
 let g:which_key_map.s = {
       \ 'name' : '+search' ,
       \ '.' : [':Telescope filetypes'                   , 'filetypes'],
-      \ ';' : [':Telescope commands'                    , 'commands'],
-      \ 'a' : [':Telescope lsp_code_actions'            , 'code_actions'],
-      \ 'A' : [':Telescope builtin'                     , 'all'],
+      \ ':' : [':Telescope commands'                    , 'commands'],
       \ 'b' : [':Telescope buffers'                     , 'buffers'],
-      \ 'B' : [':Telescope git_branches'                , 'git branches'],
       \ 'd' : [':Telescope lsp_document_diagnostics'    , 'document_diagnostics'],
       \ 'D' : [':Telescope lsp_workspace_diagnostics'   , 'workspace_diagnostics'],
-      \ 'c' : [':Telescope git_commits'                 , 'git_commits'],
-      \ 'C' : [':Telescope git_bcommits'                , 'git_bcommits'],
       \ 'f' : [':Telescope find_files'                  , 'files'],
-      \ 'F' : [':Telescope git_files'                   , 'git_files'],
-      \ 'g' : [':Telescope tags'                        , 'tags'],
-      \ 'G' : [':Telescope current_buffer_tags'         , 'buffer_tags'],
       \ 'h' : [':Telescope command_history'             , 'history'],
-      \ 'H' : [':Telescope help_tags'                   , 'help_tags'],
-      \ 'i' : [':Telescope media_files'                 , 'media files'],
       \ 'k' : [':Telescope keymaps'                     , 'keymaps'],
-      \ 'l' : [':Telescope loclist'                     , 'loclist'],
       \ 'm' : [':Telescope marks'                       , 'marks'],
       \ 'M' : [':Telescope man_pages'                   , 'man_pages'],
       \ 'o' : [':Telescope vim_options'                 , 'vim_options'],
-      \ 'O' : [':Telescope oldfiles'                    , 'oldfiles'],
-      \ 'p' : [':Telescope fd'                          , 'fd'],
-      \ 'P' : [':Telescope spell_suggest'               , 'spell_suggest'],
-      \ 's' : [':Telescope git_status'                  , 'git_status'],
-      \ 'S' : [':Telescope grep_string'                 , 'grep_string'],
       \ 't' : [':Telescope live_grep'                   , 'text'],
-      \ 'y' : [':Telescope symbols'                     , 'symbols'],
-      \ 'Y' : [':Telescope lsp_workspace_symbols'       , 'lsp_workspace_symbols'],
       \ 'r' : [':Telescope registers'                   , 'registers'],
-      \ 'R' : [':Telescope reloader'                    , 'reloader'],
-      \ 'w' : [':Telescope file_browser'                , 'buf_fuz_find'],
-      \ 'u' : [':Telescope colorscheme'                 , 'colorschemes'],
-      \ 'z' : [':Telescope current_buffer_fuzzy_find'   , 'buf_fuz_find'],
       \ }
+      " \ 'A' : [':Telescope builtin'                     , 'all'],
+      " \ 'a' : [':Telescope lsp_code_actions'            , 'code_actions'],
+      " \ 'B' : [':Telescope git_branches'                , 'git branches'],
+      " \ 'C' : [':Telescope git_bcommits'                , 'git_bcommits'],
+      " \ 'c' : [':Telescope git_commits'                 , 'git_commits'],
+      " \ 'F' : [':Telescope git_files'                   , 'git_files'],
+      " \ 'G' : [':Telescope current_buffer_tags'         , 'buffer_tags'],
+      " \ 'g' : [':Telescope tags'                        , 'tags'],
+      " \ 'H' : [':Telescope help_tags'                   , 'help_tags'],
+      " \ 'i' : [':Telescope media_files'                 , 'media files'],
+      " \ 'l' : [':Telescope loclist'                     , 'loclist'],
+      " \ 'O' : [':Telescope oldfiles'                    , 'oldfiles'],
+      " \ 'p' : [':Telescope fd'                          , 'fd'],
+      " \ 'P' : [':Telescope spell_suggest'               , 'spell_suggest'],
+      " \ 'R' : [':Telescope reloader'                    , 'reloader'],
+      " \ 's' : [':Telescope git_status'                  , 'git_status'],
+      " \ 'S' : [':Telescope grep_string'                 , 'grep_string'],
+      " \ 'u' : [':Telescope colorscheme'                 , 'colorschemes'],
+      " \ 'w' : [':Telescope file_browser'                , 'buf_fuz_find'],
+      " \ 'Y' : [':Telescope lsp_workspace_symbols'       , 'lsp_workspace_symbols'],
+      " \ 'y' : [':Telescope symbols'                     , 'symbols'],
+      " \ 'z' : [':Telescope current_buffer_fuzzy_find'   , 'buf_fuz_find'],
 
 let g:which_key_map.S = {
       \ 'name' : '+Session' ,
@@ -182,14 +183,14 @@ let g:which_key_map.S = {
       " \ 'S' : [':!git status'                      , 'status'],
 let g:which_key_map.g = {
       \ 'name' : '+git' ,
-      \ 'b' : [':execute "lua require\"gitsigns\".blame_line()"'                   , 'blame line'],
-      \ 'B' : [':GitBlameToggle'                   , 'blame toggle'],
-      \ 'd' : [':Gdiff'                   , 'diff buffer'],
-      \ 'p' : [':execute "lua require\"gitsigns\".preview_hunk()"'                   , 'preview hunk'],
-      \ 'r' : [':execute "lua require\"gitsigns\".reset_hunk()"'                   , 'reset hunk'],
-      \ 'R' : [':execute "lua require\"gitsigns\".reset_buffer()"'                   , 'reset buffer'],
-      \ 's' : [':execute "lua require\"gitsigns\".stage_hunk()"'                   , 'stage hunk'],
-      \ 'u' : [':execute "lua require\"gitsigns\".undo_stage_hunk()"'                   , 'undo stage hunk'],
+      \ 'b' : [':execute "lua require\"gitsigns\".blame_line()"'       , 'blame line'],
+      \ 'B' : [':GitBlameToggle'                                       , 'blame toggle'],
+      \ 'd' : [':Gdiff'                                                , 'diff buffer'],
+      \ 'p' : [':execute "lua require\"gitsigns\".preview_hunk()"'     , 'preview hunk'],
+      \ 'r' : [':execute "lua require\"gitsigns\".reset_hunk()"'       , 'reset hunk'],
+      \ 'R' : [':execute "lua require\"gitsigns\".reset_buffer()"'     , 'reset buffer'],
+      \ 's' : [':execute "lua require\"gitsigns\".stage_hunk()"'       , 'stage hunk'],
+      \ 'u' : [':execute "lua require\"gitsigns\".undo_stage_hunk()"'  , 'undo stage hunk'],
       \ }
 
 " let g:which_key_map.G = {
@@ -230,18 +231,18 @@ let g:which_key_map.l = {
 " t is for terminal
 let g:which_key_map.t = {
       \ 'name' : '+terminal' ,
-      \ ';' : [':FloatermNew --wintype=normal --height=6'       , 'terminal'],
+      \ ':' : [':FloatermNew --wintype=normal --height=6'       , 'tiny terminal'],
       \ 'f' : [':FloatermNew fzf'                               , 'fzf'],
       \ 'g' : [':FloatermNew lazygit'                           , 'git'],
       \ 'd' : [':FloatermNew lazydocker'                        , 'docker'],
-      \ 'n' : [':FloatermNew node'                              , 'node'],
-      \ 'N' : [':FloatermNew nnn'                               , 'nnn'],
-      \ 'p' : [':FloatermNew python'                            , 'python'],
-      \ 'm' : [':FloatermNew lazynpm'                           , 'npm'],
       \ 'r' : [':FloatermNew ranger'                            , 'ranger'],
       \ 't' : [':FloatermToggle'                                , 'toggle'],
-      \ 'y' : [':FloatermNew ytop'                              , 'ytop'],
-      \ 'u' : [':FloatermNew ncdu'                              , 'ncdu'],
       \ }
+      " \ 'n' : [':FloatermNew node'                              , 'node'],
+      " \ 'N' : [':FloatermNew nnn'                               , 'nnn'],
+      " \ 'p' : [':FloatermNew python'                            , 'python'],
+      " \ 'm' : [':FloatermNew lazynpm'                           , 'npm'],
+      " \ 'y' : [':FloatermNew ytop'                              , 'ytop'],
+      " \ 'u' : [':FloatermNew ncdu'                              , 'ncdu'],
 
 call which_key#register('<Space>', "g:which_key_map")
