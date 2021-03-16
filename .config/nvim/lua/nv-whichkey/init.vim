@@ -213,20 +213,20 @@ let g:which_key_map.l = {
       \ 'A' : [':Lspsaga range_code_action'          , 'selected action'],
       \ 'd' : [':Telescope lsp_document_diagnostics' , 'document diagnostics'],
       \ 'D' : [':Telescope lsp_workspace_diagnostics', 'workspace diagnostics'],
-      \ 'f' : [':LspFormatting'                      , 'format'],
-      \ 'H' : [':Lspsaga signature_help'             , 'signature_help'],
+      \ 's' : [':Lspsaga signature_help'             , 'signature_help'],
       \ 'I' : [':LspInfo'                            , 'lsp info'],
       \ 'l' : [':Lspsaga lsp_finder'                 , 'lsp finder'],
       \ 'L' : [':Lspsaga show_line_diagnostics'      , 'line_diagnostics'],
       \ 'o' : [':Vista!!'                            , 'outline'],
       \ 'p' : [':Lspsaga preview_definition'         , 'preview definition'],
       \ 'q' : [':Telescope quickfix'                 , 'quickfix'],
-      \ 'r' : [':LspRename'                          , 'rename'],
-      \ 'T' : [':LspTypeDefinition'                  , 'type defintion'],
+      \ 'r' : [':LspSaga rename'                     , 'rename'],
       \ 'x' : [':cclose'                             , 'close quickfix'],
-      \ 's' : [':Telescope lsp_document_symbols'     , 'document symbols'],
-      \ 'S' : [':Telescope lsp_workspace_symbols'    , 'workspace symbols'],
       \ }
+      " \ 'f' : [':LspFormatting'                      , 'format'],
+      " \ 's' : [':Telescope lsp_document_symbols'     , 'document symbols'],
+      " \ 'S' : [':Telescope lsp_workspace_symbols'    , 'workspace symbols'],
+      " \ 'T' : [':LspTypeDefinition'                  , 'type defintion'],
 
 " t is for terminal
 let g:which_key_map.t = {
