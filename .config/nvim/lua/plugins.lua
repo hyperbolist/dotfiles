@@ -122,4 +122,7 @@ return require('packer').startup(function(use)
   use 'voldikss/vim-floaterm'
   use 'tpope/vim-unimpaired'
   use 'liuchengxu/vista.vim'
+
+  -- TODO investigate these
+  --use 'RRethy/vim-illuminate'
 end)
