@@ -64,10 +64,6 @@ return require('packer').startup(function(use)
     config = function()
       vim.api.nvim_exec(
       [[
-      " base16 setup
-      let base16colorspace=256
-      " tomorrow
-      colorscheme base16-tomorrow
       " let tmux set colors when the tmux pane containing this editor becomes inactive
       hi Normal ctermfg=none ctermbg=none
       " spelling

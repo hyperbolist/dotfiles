@@ -9,9 +9,6 @@ vim.api.nvim_set_keymap('n', '<M-w>', ':Bwipeout<CR>', { noremap = true, silent 
 -- no hl
 vim.api.nvim_set_keymap('n', '<SPACE>', ':noh<CR>', { noremap = true, silent = true })
 
--- explorer
-vim.api.nvim_set_keymap('n', '<Leader>e', ':NvimTreeToggle<CR>', { noremap = true, silent = true })
-
 -- better indenting
 vim.api.nvim_set_keymap('v', '>', '>gv', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('v', '<', '<gv', { noremap = true, silent = true })
@@ -23,13 +20,6 @@ vim.api.nvim_set_keymap('n', '<S-TAB>', ':bprevious<CR>', { noremap = true, sile
 -- Move selected line / block of text in visual mode
 vim.api.nvim_set_keymap('x', 'K', ':move \'<-2<CR>gv=gv', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('x', 'J', ':move \'>+1<CR>gv=gv', { noremap = true, silent = true })
-
--- Better nav for omnicomplete
--- vim.cmd('inoremap <expr> <c-j> (\"\\<C-n>\")')
--- vim.cmd('inoremap <expr> <c-k> (\"\\<C-p>\")')
-
--- TAB Complete
---vim.api.nvim_set_keymap('i', '<expr><TAB>', 'pumvisible() ? \"\\<C-n>\" : \"\\<TAB>\"', { noremap = true, silent = true })
 
 -- https://xkcd.com/149/
 vim.api.nvim_set_keymap('c', 'w!!', 'w !sudo tee %', { noremap = true, silent = true })

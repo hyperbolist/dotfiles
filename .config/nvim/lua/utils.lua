@@ -22,10 +22,10 @@ end
 
 define_augroups(
     {
-        _general_settings = {
+        _highlight_on_yank = {
             {'TextYankPost', '*', 'lua require(\'vim.highlight\').on_yank({higroup = \'IncSearch\', timeout = 200})'},
         },
-        _corsorline_focus = {
+        _cursorline_focus = {
             -- this causes the nvim start message to disappear, but it's worth it
             {'FocusLost', '*', 'silent lua vim.wo.cursorline=false'},
             {'FocusGained', '*', 'silent lua vim.wo.cursorline=true'},
