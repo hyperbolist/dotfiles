@@ -39,6 +39,9 @@ define_augroups(
         },
         _quickfix_to_the_bottom = {
             {'FileType', 'qf', 'wincmd J'},
+        },
+        _lightbulb = {
+            {'CursorHold,CursorHoldI', '*', 'lua require\'nvim-lightbulb\'.update_lightbulb()'},
         }
     }
 )

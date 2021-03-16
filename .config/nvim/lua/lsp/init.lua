@@ -18,6 +18,8 @@ vim.cmd('nnoremap <silent> <C-k> <cmd>lua vim.lsp.buf.signature_help()<CR>')
 vim.cmd('nnoremap <silent> <C-p> :Lspsaga diagnostic_jump_prev<CR>')
 vim.cmd('nnoremap <silent> <C-n> :Lspsaga diagnostic_jump_next<CR>')
 
+vim.fn.sign_define('LightBulbSign', { text = "💡", texthl = "SignColumn", numhl = "SignColumn" })
+
 -- these conflict with vim-smoothie
 -- scroll down hover doc or scroll in definition preview
 --vim.cmd('nnoremap <silent> <C-f> <cmd>lua require(\'lspsaga.action\').smart_scroll_with_saga(1)<CR>')
