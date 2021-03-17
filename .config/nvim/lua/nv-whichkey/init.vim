@@ -30,32 +30,34 @@ let g:which_key_map['?'] = [ ':NvimTreeFindFile'                               ,
 let g:which_key_map['e'] = [ ':NvimTreeToggle'                                 , 'explorer' ]
 let g:which_key_map['f'] = [ ':Telescope find_files'                           , 'find files' ]
 " let g:which_key_map['h'] = [ '<C-W>s'                                          , 'split below']
-let g:which_key_map['n'] = [ ':let @/ = ""'                                    , 'no highlight' ]
+" let g:which_key_map['n'] = [ ':noh'                                            , 'no highlight' ]
+let g:which_key_map['n'] = [ ':set nonumber!'                                  , 'line-numbers']
 let g:which_key_map['r'] = [ ':RnvimrToggle'                                   , 'ranger' ]
-let g:which_key_map['T'] = [ ':TSHighlightCapturesUnderCursor'                 , 'treesitter highlight' ]
+let g:which_key_map['R'] = [ ':set norelativenumber!'                          , 'relative line nums' ]
+"let g:which_key_map['T'] = [ ':TSHighlightCapturesUnderCursor'                 , 'treesitter highlight' ]
 " let g:which_key_map['v'] = [ '<C-W>v'                                          , 'split right']
 let g:which_key_map['z'] = [ 'Goyo'                                            , 'zen' ]
 
 " Group mappings
 
-" a is for actions
-let g:which_key_map.a = {
-      \ 'name' : '+actions' ,
-      \ 'c' : [':ColorizerToggle'        , 'colorizer'],
-      \ 'e' : [':CocCommand explorer'    , 'explorer'],
-      \ 'h' : [':let @/ = ""'            , 'remove search highlight'],
-      \ 'l' : [':Bracey'                 , 'start live server'],
-      \ 'L' : [':BraceyStop'             , 'stop live server'],
-      \ 'm' : [':MarkdownPreview'        , 'markdown preview'],
-      \ 'M' : [':MarkdownPreviewStop'    , 'markdown preview stop'],
-      \ 'n' : [':set nonumber!'          , 'line-numbers'],
-      \ 's' : [':s/\%V\(.*\)\%V/"\1"/'   , 'surround'],
-      \ 'r' : [':set norelativenumber!'  , 'relative line nums'],
-      \ 't' : [':FloatermToggle'         , 'terminal'],
-      \ 'v' : [':Codi'                   , 'virtual repl on'],
-      \ 'V' : [':Codi!'                  , 'virtual repl off'],
-      \ 'w' : [':StripWhitespace'        , 'strip whitespace'],
-      \ }
+" " a is for actions
+" let g:which_key_map.a = {
+"       \ 'name' : '+actions' ,
+"       \ 'c' : [':ColorizerToggle'        , 'colorizer'],
+"       \ 'e' : [':CocCommand explorer'    , 'explorer'],
+"       \ 'h' : [':let @/ = ""'            , 'remove search highlight'],
+"       \ 'l' : [':Bracey'                 , 'start live server'],
+"       \ 'L' : [':BraceyStop'             , 'stop live server'],
+"       \ 'm' : [':MarkdownPreview'        , 'markdown preview'],
+"       \ 'M' : [':MarkdownPreviewStop'    , 'markdown preview stop'],
+"       \ 'n' : [':set nonumber!'          , 'line-numbers'],
+"       \ 's' : [':s/\%V\(.*\)\%V/"\1"/'   , 'surround'],
+"       \ 'r' : [':set norelativenumber!'  , 'relative line nums'],
+"       \ 't' : [':FloatermToggle'         , 'terminal'],
+"       \ 'v' : [':Codi'                   , 'virtual repl on'],
+"       \ 'V' : [':Codi!'                  , 'virtual repl off'],
+"       \ 'w' : [':StripWhitespace'        , 'strip whitespace'],
+"       \ }
 
 " b is for buffer
 " let g:which_key_map.b = {
@@ -216,7 +218,6 @@ let g:which_key_map.l = {
       \ 's' : [':Lspsaga signature_help'             , 'signature_help'],
       \ 'I' : [':LspInfo'                            , 'lsp info'],
       \ 'l' : [':Lspsaga lsp_finder'                 , 'lsp finder'],
-      \ 'L' : [':Lspsaga show_line_diagnostics'      , 'line_diagnostics'],
       \ 'o' : [':Vista!!'                            , 'outline'],
       \ 'p' : [':Lspsaga preview_definition'         , 'preview definition'],
       \ 'q' : [':Telescope quickfix'                 , 'quickfix'],
@@ -224,6 +225,7 @@ let g:which_key_map.l = {
       \ 'x' : [':cclose'                             , 'close quickfix'],
       \ }
       " \ 'f' : [':LspFormatting'                      , 'format'],
+      " \ 'L' : [':Lspsaga show_line_diagnostics'      , 'line_diagnostics'],
       " \ 's' : [':Telescope lsp_document_symbols'     , 'document symbols'],
       " \ 'S' : [':Telescope lsp_workspace_symbols'    , 'workspace symbols'],
       " \ 'T' : [':LspTypeDefinition'                  , 'type defintion'],
