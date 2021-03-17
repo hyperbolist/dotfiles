@@ -10,11 +10,7 @@ vim.o.splitbelow=true            -- Horizontal splits will automatically be belo
 vim.o.splitright=true            -- Vertical splits will automatically be to the right
 vim.o.t_Co="256"                 -- Support 256 colors
 vim.o.conceallevel=0             -- So that I can see `` in markdown files
-vim.o.tabstop=2                 -- Insert 2 spaces for a tab
-vim.o.softtabstop=2             -- Insert 2 spaces for a tab
-vim.o.shiftwidth=2               -- Change the number of space characters inserted for indentation
-vim.o.expandtab=true            -- Converts tabs to spaces
-vim.o.smartindent=true          -- Makes indenting smart
+vim.o.smartindent=true           -- Makes indenting smart
 vim.o.laststatus=0               -- Never display the status line (unless we're using airline that is)
 vim.wo.number=false              -- Don't show Line numbers
 vim.wo.cursorline=true           -- Enable highlighting of the current line
@@ -34,6 +30,13 @@ vim.o.showmatch=true             -- Show matching braces
 vim.o.mat=2                      -- How many tenths of a second to blink matches
 vim.o.shell="bash"               -- Let vim use bash for maximum compatibility, fish breaks noninteractive flows
 vim.o.inccommand="split"         -- Show live previews of substitutions
+
+-- by default, 2 spaces instead of tabs
+-- but tpope/vim-sleuth will take care of us when we're in a project that uses actual tabs
+vim.o.tabstop=2                  -- Show 2 spaces for a tab
+vim.o.softtabstop=2              -- Show 2 spaces for a tab
+vim.o.shiftwidth=2               -- Change the number of space characters inserted for indentation
+vim.o.expandtab=true             -- Converts tabs to spaces
 
 -- Treat dash separated words as a word text object
 vim.o.iskeyword = vim.o.iskeyword .. ",-"
