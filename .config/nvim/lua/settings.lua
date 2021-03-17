@@ -33,10 +33,10 @@ vim.o.inccommand="split"         -- Show live previews of substitutions
 
 -- by default, 2 spaces instead of tabs
 -- but tpope/vim-sleuth will take care of us when we're in a project that uses actual tabs
-vim.o.tabstop=2                  -- Show 2 spaces for a tab
-vim.o.softtabstop=2              -- Show 2 spaces for a tab
-vim.o.shiftwidth=2               -- Change the number of space characters inserted for indentation
+vim.o.tabstop=2                  -- Show 2 spaces for a \t
+vim.o.shiftwidth=2               -- Show 2 spaces for each level of indentation
 vim.o.expandtab=true             -- Converts tabs to spaces
+vim.o.softtabstop=2              -- With expandtab, insert/delete 2 spaces for <tab>/<bs> over indentation
 
 -- Treat dash separated words as a word text object
 vim.o.iskeyword = vim.o.iskeyword .. ",-"
