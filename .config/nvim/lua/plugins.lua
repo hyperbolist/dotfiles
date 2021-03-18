@@ -60,7 +60,7 @@ return require('packer').startup(function(use)
   --use 'christianchiarulli/nvcode-color-schemes.vim'
   --use 'norcalli/nvim-colorizer.lua'
   use {
-    'chriskempson/base16-vim',
+    'fnune/base16-vim',
     config = function()
       vim.api.nvim_exec(
       [[

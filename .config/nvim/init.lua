@@ -31,8 +31,8 @@ require('nv-treesitter')
 require('nv-vim-rooter')
 
 -- .vim still
-vim.cmd('source ~/.config/nvim/lua/nv-goyo/init.vim')
-vim.cmd('source ~/.config/nvim/lua/nv-whichkey/init.vim')
+vim.cmd('source ~/.config/nvim/vimscript/nv-goyo/init.vim')
+vim.cmd('source ~/.config/nvim/vimscript/nv-whichkey/init.vim')
 
 -- LSP
 require('lsp')
