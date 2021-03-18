@@ -40,8 +40,11 @@ return require('packer').startup(function(use)
   use 'kyazdani42/nvim-web-devicons'
 
   -- Status Line and Bufferline
-  use 'vim-airline/vim-airline'
-  use 'vim-airline/vim-airline-themes'
+  --use 'vim-airline/vim-airline'
+  --use 'vim-airline/vim-airline-themes'
+  use 'glepnir/galaxyline.nvim'
+  use 'romgrk/barbar.nvim'
+
 
   -- Telescope
   use 'nvim-lua/popup.nvim'
@@ -60,12 +63,33 @@ return require('packer').startup(function(use)
       vim.api.nvim_exec(
       [[
       " let tmux set colors when the tmux pane containing this editor becomes inactive
-      hi Normal ctermfg=none ctermbg=none
+      hi Normal ctermfg=none ctermbg=none guifg=none guibg=none
+
       " spelling
-      hi SpellBad   ctermfg=black ctermbg=9  gui=undercurl guisp=#c82829
-      hi SpellCap   ctermfg=black ctermbg=12 gui=undercurl guisp=#4271ae
-      hi SpellRare  ctermfg=black ctermbg=13 gui=undercurl guisp=#8959a8
-      hi SpellLocal ctermfg=black ctermbg=14 gui=undercurl guisp=#3e999f
+      hi SpellBad   ctermfg=0 ctermbg=9  gui=undercurl guifg=#000000 guibg=#cc6666
+      hi SpellCap   ctermfg=0 ctermbg=12 gui=undercurl guifg=#000000 guibg=#81a2be
+      hi SpellRare  ctermfg=0 ctermbg=13 gui=undercurl guifg=#000000 guibg=#b294bb
+      hi SpellLocal ctermfg=0 ctermbg=14 gui=undercurl guifg=#000000 guibg=#8abeb7
+
+      " barbar tabline
+      hi BufferCurrent        guifg=#ffffff guibg=#444444
+      hi BufferCurrentIcon                  guibg=#444444
+      hi BufferCurrentIndex   guifg=#81a2be guibg=#444444
+      hi BufferCurrentMod     guifg=#cc6666 guibg=#444444
+      hi BufferCurrentSign    guifg=#81a2be guibg=#444444
+      hi BufferCurrentTarget  guifg=#ff0000 guibg=#444444
+      hi BufferVisible        guifg=#969896 guibg=#282a2e
+      hi BufferVisibleIcon                  guibg=#282a2e
+      hi BufferVisibleIndex   guifg=#81a2be guibg=#282a2e
+      hi BufferVisibleMod     guifg=#cc6666 guibg=#282a2e
+      hi BufferVisibleSign    guifg=#81a2be guibg=#282a2e
+      hi BufferVisibleTarget  guifg=#ff0000 guibg=#282a2e
+      hi BufferInactive       guifg=#969896 guibg=#282a2e
+      hi BufferInactiveIcon                 guibg=#282a2e
+      hi BufferInactiveIndex  guifg=#81a2be guibg=#282a2e
+      hi BufferInactiveMod    guifg=#cc6666 guibg=#282a2e
+      hi BufferInactiveSign   guifg=#81a2be guibg=#282a2e
+      hi BufferInactiveTarget guifg=#ff0000 guibg=#282a2e
       ]], false)
     end
   }

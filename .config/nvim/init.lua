@@ -14,7 +14,8 @@ require('colorscheme')
 require('utils')
 
 -- Plugins
-require('nv-airline')
+--require('nv-airline')
+require('nv-barbar')
 require('nv-compe')
 require('nv-filebeagle')
 require('nv-floaterm')
