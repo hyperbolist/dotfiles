@@ -1,16 +1,18 @@
 local execute = vim.api.nvim_command
 local fn = vim.fn
 
-local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
+local install_path = fn.stdpath('data')..'/site/pack/packer/opt/packer.nvim'
 
 if fn.empty(fn.glob(install_path)) > 0 then
   execute('!git clone https://github.com/wbthomason/packer.nvim '..install_path)
   execute 'packadd packer.nvim'
 end
 
+vim.cmd [[packadd packer.nvim]]
+
 return require('packer').startup(function(use)
   -- Packer can manage itself as an optional plugin
-  use {'wbthomason/packer.nvim'}
+  use {'wbthomason/packer.nvim', opt = true}
 
   -- Information
   use 'nanotee/nvim-lua-guide'
@@ -76,9 +78,9 @@ return require('packer').startup(function(use)
   }
 
   -- Git
-  use 'TimUntersberger/neogit'
+  --use 'TimUntersberger/neogit'
   use {'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' } }
-  use 'tpope/vim-fugitive' -- merely to grant airline the ability to detect branch
+  use 'tpope/vim-fugitive' -- mostly to grant airline the ability to detect branch, also for :Gdiff
   use 'f-person/git-blame.nvim'
 
   -- Easily Create Gists
