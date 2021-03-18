@@ -29,7 +29,7 @@ vim.wo.signcolumn="yes"          -- For git status, etc
 vim.o.magic=true                 -- Set magic on, for regex
 vim.o.showmatch=true             -- Show matching braces
 vim.o.mat=2                      -- How many tenths of a second to blink matches
-vim.o.shell="bash"               -- Let vim use bash for maximum compatibility, fish breaks noninteractive flows
+vim.o.shell="bash"               -- Let vim use bash for max compatibility, fish breaks noninteractive flows
 vim.o.inccommand="split"         -- Show live previews of substitutions
 
 -- by default, 2 spaces instead of tabs

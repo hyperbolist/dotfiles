@@ -23,10 +23,6 @@ return require('packer').startup(function(use)
   use 'onsails/lspkind-nvim'
   use 'kosayoda/nvim-lightbulb'
   use 'ray-x/lsp_signature.nvim'
-  --use 'mfussenegger/nvim-jdtls'
-
-  -- Debugging
-  --use 'mfussenegger/nvim-dap'
 
   -- Autocomplete
   use 'hrsh7th/nvim-compe'
@@ -41,8 +37,7 @@ return require('packer').startup(function(use)
   use 'mhinz/vim-startify'
 
   -- Icons
-  --use 'kyazdani42/nvim-web-devicons'
-  --use 'ryanoasis/vim-devicons'
+  use 'kyazdani42/nvim-web-devicons'
 
   -- Status Line and Bufferline
   use 'vim-airline/vim-airline'
@@ -52,14 +47,12 @@ return require('packer').startup(function(use)
   use 'nvim-lua/popup.nvim'
   use 'nvim-lua/plenary.nvim'
   use 'nvim-telescope/telescope.nvim'
-  --use 'nvim-telescope/telescope-media-files.nvim'
 
   -- Explorers
   use 'kyazdani42/nvim-tree.lua'
   use 'jeetsukumaran/vim-filebeagle'
 
   -- Color
-  --use 'christianchiarulli/nvcode-color-schemes.vim'
   --use 'norcalli/nvim-colorizer.lua'
   use {
     'fnune/base16-vim',
@@ -78,14 +71,9 @@ return require('packer').startup(function(use)
   }
 
   -- Git
-  --use 'TimUntersberger/neogit'
   use {'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' } }
   use 'tpope/vim-fugitive' -- mostly to grant airline the ability to detect branch, also for :Gdiff
   use 'f-person/git-blame.nvim'
-
-  -- Easily Create Gists
-  --use 'mattn/vim-gist'
-  --use 'mattn/webapi-vim'
 
   -- prose mode
   use 'junegunn/goyo.vim'
@@ -109,7 +97,7 @@ return require('packer').startup(function(use)
   use 'kevinhwang91/rnvimr'
   --use 'metakirby5/codi.vim'
   use 'psliwka/vim-smoothie'
-  --use {'iamcco/markdown-preview.nvim', run = 'cd app && yarn install', cmd = 'MarkdownPreview'}
+  use {'iamcco/markdown-preview.nvim', run = 'cd app && npm install'}
   use 'moll/vim-bbye'
   --use 'turbio/bracey.vim'
   --use 'AndrewRadev/tagalong.vim'
