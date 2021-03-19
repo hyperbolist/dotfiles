@@ -13,7 +13,7 @@ local colors = {
     grey = '#969896',
     blue = '#81a2be',
     red = '#cc6666',
-    white = '#c8c8c8'
+    bright_grey = '#c8c8c8'
 }
 local icons = {
     slant = {
@@ -132,8 +132,8 @@ gls.left[4] = {
         end,
         condition = condition.buffer_not_empty,
         separator = ' ',
-        separator_highlight = {colors.white, colors.bg},
-        highlight = {colors.white, colors.bg, 'bold'}
+        separator_highlight = {'NONE', colors.bg},
+        highlight = {colors.bright_grey, colors.bg, 'bold'}
     }
 }
 gls.left[5] = {
