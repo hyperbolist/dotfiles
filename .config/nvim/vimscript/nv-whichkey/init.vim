@@ -114,6 +114,7 @@ let g:which_key_map.s = {
       \ 'D' : [':Telescope lsp_workspace_diagnostics'   , 'workspace_diagnostics'],
       \ 'f' : [':Telescope find_files'                  , 'files'],
       \ 'h' : [':Telescope command_history'             , 'history'],
+      \ 'H' : [':Telescope highlights'                  , 'highlights'],
       \ 'k' : [':Telescope keymaps'                     , 'keymaps'],
       \ 'm' : [':Telescope marks'                       , 'marks'],
       \ 'M' : [':Telescope man_pages'                   , 'man_pages'],

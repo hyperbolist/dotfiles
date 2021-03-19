@@ -75,19 +75,19 @@ return require('packer').startup(function(use)
       hi BufferCurrent        guifg=#ffffff guibg=#444444
       hi BufferCurrentIcon                  guibg=#444444
       hi BufferCurrentIndex   guifg=#81a2be guibg=#444444
-      hi BufferCurrentMod     guifg=#cc6666 guibg=#444444
+      hi BufferCurrentMod     guifg=#f0c674 guibg=#444444
       hi BufferCurrentSign    guifg=#81a2be guibg=#444444
       hi BufferCurrentTarget  guifg=#ff0000 guibg=#444444
       hi BufferVisible        guifg=#969896 guibg=#282a2e
       hi BufferVisibleIcon                  guibg=#282a2e
       hi BufferVisibleIndex   guifg=#81a2be guibg=#282a2e
-      hi BufferVisibleMod     guifg=#cc6666 guibg=#282a2e
+      hi BufferVisibleMod     guifg=#f0c674 guibg=#282a2e
       hi BufferVisibleSign    guifg=#81a2be guibg=#282a2e
       hi BufferVisibleTarget  guifg=#ff0000 guibg=#282a2e
       hi BufferInactive       guifg=#969896 guibg=#282a2e
       hi BufferInactiveIcon                 guibg=#282a2e
       hi BufferInactiveIndex  guifg=#81a2be guibg=#282a2e
-      hi BufferInactiveMod    guifg=#cc6666 guibg=#282a2e
+      hi BufferInactiveMod    guifg=#f0c674 guibg=#282a2e
       hi BufferInactiveSign   guifg=#81a2be guibg=#282a2e
       hi BufferInactiveTarget guifg=#ff0000 guibg=#282a2e
       ]], false)
