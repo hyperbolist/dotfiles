@@ -29,6 +29,9 @@ vim.fn.sign_define('LightBulbSign', { text = "💡", texthl = "SignColumn", numh
 -- scroll up hover doc
 --vim.cmd('nnoremap <silent> <C-b> <cmd>lua require(\'lspsaga.action\').smart_scroll_with_saga(-1)<CR>')
 
+vim.cmd('command! -nargs=0 LspVirtualTextToggle lua require("lsp/virtual_text").toggle()')
+
+
 --[[ " autoformat
 autocmd BufWritePre *.js lua vim.lsp.buf.formatting_sync(nil, 100)
 autocmd BufWritePre *.jsx lua vim.lsp.buf.formatting_sync(nil, 100)

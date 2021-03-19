@@ -224,6 +224,7 @@ let g:which_key_map.l = {
       \ 'p' : [':Lspsaga preview_definition'         , 'preview definition'],
       \ 'q' : [':Telescope quickfix'                 , 'quickfix'],
       \ 'r' : [':LspSaga rename'                     , 'rename'],
+      \ 'v' : [':LspVirtualTextToggle'               , 'lsp toggle virtual text'],
       \ 'x' : [':cclose'                             , 'close quickfix'],
       \ }
       " \ 'f' : [':LspFormatting'                      , 'format'],
