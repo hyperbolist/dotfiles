@@ -65,6 +65,13 @@ return require('packer').startup(function(use)
       " let tmux set colors when the tmux pane containing this editor becomes inactive
       hi Normal ctermfg=none ctermbg=none guifg=none guibg=none
 
+      " selection
+      hi Visual ctermfg=18 ctermbg=3 guifg=#282a2e guibg=#f0c674
+
+      " telescope would have used Visual
+      hi TelescopeSelection ctermbg=19 guibg=#373b41
+      hi TelescopeLinePreview ctermbg=19 guibg=#373b41
+
       " spelling
       hi SpellBad   ctermfg=0 ctermbg=9  gui=undercurl guifg=#000000 guibg=#cc6666
       hi SpellCap   ctermfg=0 ctermbg=12 gui=undercurl guifg=#000000 guibg=#81a2be

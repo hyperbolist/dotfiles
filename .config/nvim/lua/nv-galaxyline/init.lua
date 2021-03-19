@@ -111,7 +111,7 @@ gls.left[2] = {
         condition = condition.check_git_workspace,
         separator = ' ',
         separator_highlight = {'NONE', colors.bg},
-        highlight = {colors.grey, colors.bg, 'bold'}
+        highlight = {colors.purple, colors.bg, 'bold'}
     }
 }
 
@@ -121,7 +121,7 @@ gls.left[3] = {
         condition = condition.check_git_workspace,
         separator = ' ',
         separator_highlight = {'NONE', colors.bg},
-        highlight = {colors.grey, colors.bg, 'bold'}
+        highlight = {colors.purple, colors.bg, 'bold'}
     }
 }
 gls.left[4] = {
