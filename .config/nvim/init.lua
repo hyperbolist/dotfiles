@@ -4,7 +4,7 @@
 --             / /|  /  __/ /_/ / |/ / / / / / / /
 --            /_/ |_/\___/\____/|___/_/_/ /_/ /_/
 --
--- config adapted from https://github.com/ChristianChiarulli/nvim
+-- config adapted from https://github.com/ChristianChiarulli/nvcode
 --
 
 require('plugins')
@@ -14,7 +14,6 @@ require('colorscheme')
 require('utils')
 
 -- Plugins
---require('nv-airline')
 require('nv-barbar')
 require('nv-compe')
 require('nv-filebeagle')
