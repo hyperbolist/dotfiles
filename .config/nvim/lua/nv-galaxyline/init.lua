@@ -162,20 +162,7 @@ gls.right[4] = {
 
 gls.right[5] = {
   ShowLspClient = {
-    provider = function()
-      local buf_ft = vim.api.nvim_buf_get_option(0,'filetype')
-      local buf_clients = vim.lsp.buf_get_clients()
-      if next(buf_clients) == nil then
-        return buf_ft
-      end
-      for _,client in ipairs(buf_clients) do
-        local filetypes = client.config.filetypes
-        if filetypes and vim.fn.index(filetypes,buf_ft) ~= -1 then
-          return client.name
-        end
-      end
-      return buf_ft
-    end,
+    provider = 'GetLspClient',
     condition = function()
       local tbl = {['dashboard'] = true, [' '] = true}
       if tbl[vim.bo.filetype] then return false end

@@ -1,1 +1,3 @@
-require'lspconfig'.yamlls.setup{}
+require'lspconfig'.yamlls.setup{
+  filetypes = { "yaml", "yml" }
+}
