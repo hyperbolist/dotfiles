@@ -1,5 +1,5 @@
-vim.o.laststatus = 2
 vim.o.showmode = false
+vim.o.laststatus = 2
 
 local gl = require('galaxyline')
 local colors = {
@@ -16,10 +16,6 @@ local colors = {
     bright_grey = '#c8c8c8'
 }
 local icons = {
-    slant = {
-        right = '',
-        left = ''
-    },
     diagnostic = {
         error = '  ',
         warn = '  ',
@@ -32,18 +28,10 @@ local icons = {
         remove = '  ',
     },
     git = '',
-    mode = {
-        c = ' 🄲  ',
-        i = ' 🄸  ',
-        n = ' 🄽  ',
-        r = ' 🅁  ',
-        s = ' 🅂  ',
-        t = ' 🅃  ',
-        v = ' 🅅  '
-    },
-    bullet = '•',
-    bar = '▊'
+    bar = '▊',
+    lsp = '  ',
 }
+
 local condition = require('galaxyline.condition')
 local gls = gl.section
 gl.short_line_list = {'NvimTree', 'vista', 'packer'}
@@ -74,36 +62,10 @@ gls.left[1] = {
                 t = colors.green,
                 v = colors.yellow,
             }
-            local mode_icon = {
-                R = icons.mode.r,
-                Rv = icons.mode.r,
-                S = icons.mode.s,
-                V = icons.mode.v,
-                [''] = icons.mode.s,
-                [''] = icons.mode.v,
-                ['!'] = '! ',
-                ['r?'] = icons.mode.r,
-                c = icons.mode.c,
-                ce = icons.mode.c,
-                cv = icons.mode.c,
-                i = icons.mode.i,
-                ic = icons.mode.i,
-                n = icons.mode.n,
-                no = icons.mode.n,
-                r = icons.mode.r,
-                rm = icons.mode.r,
-                s = icons.mode.s,
-                t = icons.mode.t,
-                v = icons.mode.v,
-            }
             vim.api.nvim_command('hi GalaxyViMode guifg=' .. mode_color[vim.fn.mode()])
-            --vim.api.nvim_command('hi GalaxyViMode guifg=' .. mode_color[vim.fn.mode()] .. ' gui=reverse')
-            return '▊ '
-            --return ' ' .. mode_icon[vim.fn.mode()] .. icons.bar
+            return icons.bar .. ' '
         end,
         highlight = {colors.red, colors.bg, 'bold'},
-        -- separator = ' ',
-        -- separator_highlight = {'NONE', colors.bg},
     }
 }
 
@@ -200,13 +162,26 @@ gls.right[4] = {
 
 gls.right[5] = {
     ShowLspClient = {
-        provider = 'GetLspClient',
+        provider = function()
+            local buf_ft = vim.api.nvim_buf_get_option(0,'filetype')
+            local buf_clients = vim.lsp.buf_get_clients()
+            if next(buf_clients) == nil then
+                return buf_ft
+            end
+            for _,client in ipairs(buf_clients) do
+                local filetypes = client.config.filetypes
+                if filetypes and vim.fn.index(filetypes,buf_ft) ~= -1 then
+                    return client.name
+                end
+            end
+            return buf_ft
+        end,
         condition = function()
             local tbl = {['dashboard'] = true, [' '] = true}
             if tbl[vim.bo.filetype] then return false end
             return true
         end,
-        icon = ' ',
+        icon = icons.lsp,
         highlight = {colors.grey, colors.bg, 'bold'}
     }
 }

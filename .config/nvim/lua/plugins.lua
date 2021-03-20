@@ -79,12 +79,12 @@ return require('packer').startup(function(use)
       hi SpellLocal ctermfg=0 ctermbg=14 gui=undercurl guifg=#000000 guibg=#8abeb7
 
       " barbar tabline
-      hi BufferCurrent        guifg=#ffffff guibg=#505860
-      hi BufferCurrentIcon                  guibg=#505860
-      hi BufferCurrentIndex   guifg=#81a2be guibg=#505860
-      hi BufferCurrentMod     guifg=#f0c674 guibg=#505860
-      hi BufferCurrentSign    guifg=#81a2be guibg=#505860
-      hi BufferCurrentTarget  guifg=#ff0000 guibg=#505860
+      hi BufferCurrent        guifg=#ffffff guibg=#373b41
+      hi BufferCurrentIcon                  guibg=#373b41
+      hi BufferCurrentIndex   guifg=#81a2be guibg=#373b41
+      hi BufferCurrentMod     guifg=#f0c674 guibg=#373b41
+      hi BufferCurrentSign    guifg=#81a2be guibg=#373b41
+      hi BufferCurrentTarget  guifg=#ff0000 guibg=#373b41
       hi BufferVisible        guifg=#969896 guibg=#282a2e
       hi BufferVisibleIcon                  guibg=#282a2e
       hi BufferVisibleIndex   guifg=#81a2be guibg=#282a2e
