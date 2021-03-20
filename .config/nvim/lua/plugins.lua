@@ -66,11 +66,11 @@ return require('packer').startup(function(use)
       hi Normal ctermfg=none ctermbg=none guifg=none guibg=none
 
       " selection
-      hi Visual ctermfg=18 ctermbg=3 guifg=#282a2e guibg=#f0c674
+      "hi Visual ctermfg=18 ctermbg=3 guifg=#282a2e guibg=#f0c674
 
       " telescope would have used Visual
-      hi TelescopeSelection ctermbg=19 guibg=#373b41
-      hi TelescopeLinePreview ctermbg=19 guibg=#373b41
+      "hi TelescopeSelection ctermbg=19 guibg=#373b41
+      "hi TelescopeLinePreview ctermbg=19 guibg=#373b41
 
       " spelling
       hi SpellBad   ctermfg=0 ctermbg=9  gui=undercurl guifg=#000000 guibg=#cc6666
@@ -79,23 +79,23 @@ return require('packer').startup(function(use)
       hi SpellLocal ctermfg=0 ctermbg=14 gui=undercurl guifg=#000000 guibg=#8abeb7
 
       " barbar tabline
-      hi BufferCurrent        guifg=#ffffff guibg=#444444
-      hi BufferCurrentIcon                  guibg=#444444
-      hi BufferCurrentIndex   guifg=#81a2be guibg=#444444
-      hi BufferCurrentMod     guifg=#f0c674 guibg=#444444
-      hi BufferCurrentSign    guifg=#81a2be guibg=#444444
-      hi BufferCurrentTarget  guifg=#ff0000 guibg=#444444
+      hi BufferCurrent        guifg=#ffffff guibg=#505860
+      hi BufferCurrentIcon                  guibg=#505860
+      hi BufferCurrentIndex   guifg=#81a2be guibg=#505860
+      hi BufferCurrentMod     guifg=#f0c674 guibg=#505860
+      hi BufferCurrentSign    guifg=#81a2be guibg=#505860
+      hi BufferCurrentTarget  guifg=#ff0000 guibg=#505860
       hi BufferVisible        guifg=#969896 guibg=#282a2e
       hi BufferVisibleIcon                  guibg=#282a2e
       hi BufferVisibleIndex   guifg=#81a2be guibg=#282a2e
       hi BufferVisibleMod     guifg=#f0c674 guibg=#282a2e
-      hi BufferVisibleSign    guifg=#81a2be guibg=#282a2e
+      hi BufferVisibleSign    guifg=#282a2e guibg=#282a2e
       hi BufferVisibleTarget  guifg=#ff0000 guibg=#282a2e
       hi BufferInactive       guifg=#969896 guibg=#282a2e
       hi BufferInactiveIcon                 guibg=#282a2e
       hi BufferInactiveIndex  guifg=#81a2be guibg=#282a2e
       hi BufferInactiveMod    guifg=#f0c674 guibg=#282a2e
-      hi BufferInactiveSign   guifg=#81a2be guibg=#282a2e
+      hi BufferInactiveSign   guifg=#282a2e guibg=#282a2e
       hi BufferInactiveTarget guifg=#ff0000 guibg=#282a2e
       ]], false)
     end

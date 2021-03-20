@@ -17,8 +17,8 @@ local colors = {
 }
 local icons = {
     slant = {
-        right = "",
-        left = ""
+        right = '',
+        left = ''
     },
     diagnostic = {
         error = '  ',
@@ -28,20 +28,21 @@ local icons = {
     },
     diff = {
         add = '  ',
-        icon = ' 柳',
+        modified = ' 柳',
         remove = '  ',
     },
-    git = ' ',
+    git = '',
     mode = {
-        c = ' C ',
-        i = ' I ',
-        n = ' N ',
-        r = ' R ',
-        s = ' S ',
-        t = ' T ',
-        v = ' V '
+        c = ' 🄲  ',
+        i = ' 🄸  ',
+        n = ' 🄽  ',
+        r = ' 🅁  ',
+        s = ' 🅂  ',
+        t = ' 🅃  ',
+        v = ' 🅅  '
     },
-    bullet = "•"
+    bullet = '•',
+    bar = '▊'
 }
 local condition = require('galaxyline.condition')
 local gls = gl.section
@@ -52,61 +53,64 @@ gls.left[1] = {
         provider = function()
             -- auto change color according the vim mode
             local mode_color = {
-                n = colors.green,
-                i = colors.blue,
-                v = colors.orange,
-                [''] = colors.orange,
-                V = colors.orange,
-                c = colors.purple,
-                no = colors.green,
-                s = colors.orange,
-                S = colors.orange,
-                [''] = colors.orange,
-                ic = colors.yellow,
                 R = colors.red,
                 Rv = colors.red,
-                cv = colors.green,
-                ce = colors.green,
+                S = colors.yellow,
+                V = colors.yellow,
+                [''] = colors.yellow,
+                [''] = colors.yellow,
+                ['!'] = colors.green,
+                ['r?'] = colors.cyan,
+                c = colors.purple,
+                ce = colors.purple,
+                cv = colors.purple,
+                i = colors.blue,
+                ic = colors.blue,
+                n = colors.green,
+                no = colors.green,
                 r = colors.cyan,
                 rm = colors.cyan,
-                ['r?'] = colors.cyan,
-                ['!'] = colors.green,
-                t = colors.green
+                s = colors.yellow,
+                t = colors.green,
+                v = colors.yellow,
             }
             local mode_icon = {
-                n = icons.mode.n,
-                i = icons.mode.i,
-                v = icons.mode.v,
-                [''] = icons.mode.v,
-                V = icons.mode.v,
-                c = icons.mode.c,
-                no = icons.mode.n,
-                s = icons.mode.s,
-                S = icons.mode.s,
-                [''] = icons.mode.s,
-                ic = icons.mode.i,
                 R = icons.mode.r,
                 Rv = icons.mode.r,
-                cv = icons.mode.c,
+                S = icons.mode.s,
+                V = icons.mode.v,
+                [''] = icons.mode.s,
+                [''] = icons.mode.v,
+                ['!'] = '! ',
+                ['r?'] = icons.mode.r,
+                c = icons.mode.c,
                 ce = icons.mode.c,
+                cv = icons.mode.c,
+                i = icons.mode.i,
+                ic = icons.mode.i,
+                n = icons.mode.n,
+                no = icons.mode.n,
                 r = icons.mode.r,
                 rm = icons.mode.r,
-                ['r?'] = icons.mode.r,
-                ['!'] = '! ',
+                s = icons.mode.s,
                 t = icons.mode.t,
+                v = icons.mode.v,
             }
-            vim.api.nvim_command('hi GalaxyViMode guifg=' .. mode_color[vim.fn.mode()] .. ' gui=reverse')
-            --return '▊ '
-            return ' ' .. mode_icon[vim.fn.mode()] .. icons.slant.left
+            vim.api.nvim_command('hi GalaxyViMode guifg=' .. mode_color[vim.fn.mode()])
+            --vim.api.nvim_command('hi GalaxyViMode guifg=' .. mode_color[vim.fn.mode()] .. ' gui=reverse')
+            return '▊ '
+            --return ' ' .. mode_icon[vim.fn.mode()] .. icons.bar
         end,
-        highlight = {colors.red, colors.bg, 'bold'}
+        highlight = {colors.red, colors.bg, 'bold'},
+        -- separator = ' ',
+        -- separator_highlight = {'NONE', colors.bg},
     }
 }
 
 gls.left[2] = {
     GitIcon = {
         provider = function()
-            return '  '
+            return icons.git
         end,
         condition = condition.check_git_workspace,
         separator = ' ',
@@ -128,7 +132,8 @@ gls.left[4] = {
     FileName = {
         -- provider = 'FileName',
         provider = function()
-            return vim.fn.expand("%:F")
+            --return vim.fn.expand("%:F")
+            return vim.fn.expand("%")
         end,
         condition = condition.buffer_not_empty,
         separator = ' ',
@@ -141,7 +146,7 @@ gls.left[5] = {
     DiffAdd = {
         provider = 'DiffAdd',
         condition = condition.hide_in_width,
-        icon = '  ',
+        icon = icons.diff.add,
         highlight = {colors.green, colors.bg}
     }
 }
@@ -149,7 +154,7 @@ gls.left[6] = {
     DiffModified = {
         provider = 'DiffModified',
         condition = condition.hide_in_width,
-        icon = ' 柳',
+        icon = icons.diff.modified,
         highlight = {colors.blue, colors.bg}
     }
 }
@@ -157,7 +162,7 @@ gls.left[7] = {
     DiffRemove = {
         provider = 'DiffRemove',
         condition = condition.hide_in_width,
-        icon = '  ',
+        icon = icons.diff.remove,
         highlight = {colors.red, colors.bg}
     }
 }
@@ -165,14 +170,14 @@ gls.left[7] = {
 gls.right[1] = {
     DiagnosticError = {
         provider = 'DiagnosticError',
-        icon = '  ',
+        icon = icons.diagnostic.error,
         highlight = {colors.red, colors.bg}
     }
 }
 gls.right[2] = {
     DiagnosticWarn = {
         provider = 'DiagnosticWarn',
-        icon = '  ',
+        icon = icons.diagnostic.warn,
         highlight = {colors.orange, colors.bg}
     }
 }
@@ -180,7 +185,7 @@ gls.right[2] = {
 gls.right[3] = {
     DiagnosticHint = {
         provider = 'DiagnosticHint',
-        icon = '  ',
+        icon = icons.diagnostic.hint,
         highlight = {colors.blue, colors.bg}
     }
 }
@@ -188,7 +193,7 @@ gls.right[3] = {
 gls.right[4] = {
     DiagnosticInfo = {
         provider = 'DiagnosticInfo',
-        icon = '  ',
+        icon = icons.diagnostic.info,
         highlight = {colors.blue, colors.bg}
     }
 }
