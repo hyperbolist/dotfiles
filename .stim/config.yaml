@@ -9,5 +9,5 @@ vault-address: https://vault.pgi-tools.com
 vault-initial-token-duration: 8h
 vault-username: esherman
 kube:
-    cluster:
-        filter: icekube.net
+    config:
+        cluster-filter: icekube.net
