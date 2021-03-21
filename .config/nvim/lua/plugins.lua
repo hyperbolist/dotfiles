@@ -32,6 +32,7 @@ return require('packer').startup(function(use)
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
   use 'nvim-treesitter/playground'
   use 'p00f/nvim-ts-rainbow'
+  use 'windwp/nvim-ts-autotag' -- html/vue tag closing and renaming
 
   -- Sessions
   use 'mhinz/vim-startify'
