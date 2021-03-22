@@ -35,7 +35,7 @@ return require('packer').startup(function(use)
   use 'windwp/nvim-ts-autotag' -- html/vue tag closing and renaming
 
   -- Sessions
-  use 'mhinz/vim-startify'
+  use 'glepnir/dashboard-nvim'
 
   -- Icons
   use 'kyazdani42/nvim-web-devicons'

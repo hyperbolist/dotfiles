@@ -145,13 +145,11 @@ let g:which_key_map.s = {
       " \ 'y' : [':Telescope symbols'                     , 'symbols'],
       " \ 'z' : [':Telescope current_buffer_fuzzy_find'   , 'buf_fuz_find'],
 
-let g:which_key_map.S = {
-      \ 'name' : '+Session' ,
-      \ 'c' : [':SClose'          , 'Close Session']  ,
-      \ 'd' : [':SDelete'         , 'Delete Session'] ,
-      \ 'l' : [':SLoad'           , 'Load Session']     ,
-      \ 's' : [':Startify'        , 'Start Page']     ,
-      \ 'S' : [':SSave'           , 'Save Session']   ,
+let g:which_key_map.d = {
+      \ 'name' : '+Dashboard' ,
+      \ 'l' : [':SessionLoad'           , 'Load Session'],
+      \ 'd' : [':Dashboard'             , 'Show Dashboard'],
+      \ 's' : [':SessionSave'           , 'Save Session'],
       \ }
 
 " g is for git

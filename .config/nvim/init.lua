@@ -16,6 +16,7 @@ require('utils')
 -- Plugins
 require('nv-barbar')
 require('nv-compe')
+require('nv-dashboard')
 require('nv-filebeagle')
 require('nv-floaterm')
 require('nv-galaxyline')
