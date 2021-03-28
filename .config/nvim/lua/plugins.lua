@@ -65,6 +65,8 @@ return require('packer').startup(function(use)
       [[
       " let tmux set colors when the tmux pane containing this editor becomes inactive
       hi Normal ctermfg=none ctermbg=none guifg=none guibg=none
+      hi LineNr              ctermbg=none            guibg=none
+      hi SignColumn          ctermbg=none            guibg=none
 
       " selection
       "hi Visual ctermfg=18 ctermbg=3 guifg=#282a2e guibg=#f0c674

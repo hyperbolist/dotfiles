@@ -26,6 +26,7 @@ autocmd  FileType which_key set laststatus=0 noshowmode noruler
 " let g:which_key_map['/'] = [ ':call Comment()'                                 , 'comment' ]
 " let g:which_key_map['/'] = { 'name' : 'comment' }
 " let g:which_key_map['/'] = 'which_key_ignore'
+let g:which_key_map[';'] = [ ':Dashboard'                                      , 'home screen' ]
 let g:which_key_map['?'] = [ ':NvimTreeFindFile'                               , 'find current file' ]
 let g:which_key_map['e'] = [ ':NvimTreeToggle'                                 , 'explorer' ]
 let g:which_key_map['f'] = [ ':Telescope find_files'                           , 'find files' ]
@@ -116,7 +117,6 @@ let g:which_key_map.s = {
       \ 'h' : [':Telescope command_history'             , 'history'],
       \ 'H' : [':Telescope highlights'                  , 'highlights'],
       \ 'k' : [':Telescope keymaps'                     , 'keymaps'],
-      \ 'm' : [':Telescope marks'                       , 'marks'],
       \ 'M' : [':Telescope man_pages'                   , 'man_pages'],
       \ 'o' : [':Telescope vim_options'                 , 'vim_options'],
       \ 't' : [':Telescope live_grep'                   , 'text'],
@@ -133,6 +133,7 @@ let g:which_key_map.s = {
       " \ 'H' : [':Telescope help_tags'                   , 'help_tags'],
       " \ 'i' : [':Telescope media_files'                 , 'media files'],
       " \ 'l' : [':Telescope loclist'                     , 'loclist'],
+      " \ 'm' : [':Telescope marks'                       , 'marks'],
       " \ 'O' : [':Telescope oldfiles'                    , 'oldfiles'],
       " \ 'p' : [':Telescope fd'                          , 'fd'],
       " \ 'P' : [':Telescope spell_suggest'               , 'spell_suggest'],
@@ -145,11 +146,10 @@ let g:which_key_map.s = {
       " \ 'y' : [':Telescope symbols'                     , 'symbols'],
       " \ 'z' : [':Telescope current_buffer_fuzzy_find'   , 'buf_fuz_find'],
 
-let g:which_key_map.d = {
-      \ 'name' : '+Dashboard' ,
-      \ 'l' : [':SessionLoad'           , 'Load Session'],
-      \ 'd' : [':Dashboard'             , 'Show Dashboard'],
-      \ 's' : [':SessionSave'           , 'Save Session'],
+let g:which_key_map.S = {
+      \ 'name' : '+Sessions' ,
+      \ 'l' : [':SessionLoad'           , 'load session'],
+      \ 's' : [':SessionSave'           , 'save session'],
       \ }
 
 " g is for git
