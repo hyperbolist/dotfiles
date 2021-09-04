@@ -1,13 +1,14 @@
 set -g fish_key_bindings fish_vi_key_bindings
 set fish_greeting ""
 
-set -gx fish_user_paths /Library/Frameworks/Python.framework/Versions/3.7/bin $fish_user_paths
+set -gx fish_user_paths $HOME/Library/Python/3.8/bin $fish_user_paths
 set -gx fish_user_paths $HOME/go/bin $fish_user_paths
 set -gx fish_user_paths $HOME/bin $fish_user_paths
+set -gx fish_user_paths $HOME/.local/bin $fish_user_paths
 
-set -gx EDITOR /usr/local/bin/nvim
+set -gx EDITOR /opt/homebrew/bin/nvim
 set -gx PAGER less -FiRswX
 set -gx MANPAGER "sh -c 'col -bx | bat -l man -p'"
 
 # catalina seems to force $SHELL to zsh even when user login shell is set to fish
-set -gx SHELL /usr/local/bin/fish
+set -gx SHELL /opt/homebrew/bin/fish

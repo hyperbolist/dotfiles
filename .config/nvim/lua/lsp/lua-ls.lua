@@ -1,3 +1,13 @@
+-- brew install ninja
+-- cd ~/.local/share/nvim/site/ls
+-- git clone https://github.com/sumneko/lua-language-server
+-- cd lua-language-server
+-- git submodule update --init --recursive
+-- cd 3rd/luamake
+-- compile/install.sh
+-- cd ../..
+-- ./3rd/luamake/luamake rebuild
+--
 -- https://github.com/sumneko/lua-language-server/wiki/Build-and-Run-(Standalone)
 USER = vim.fn.expand('$USER')
 

@@ -32,6 +32,9 @@ function kubectl -a cmd -d 'kubectl controls the Kubernetes cluster manager.'
     case unset-context
       command kubectl config unset current-context
 
+    case unset-namespace
+      command kubectl config set-context --current --namespace=
+
     case '*'
       command kubectl $argv
   end

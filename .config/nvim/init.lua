@@ -7,9 +7,9 @@
 -- config adapted from https://github.com/ChristianChiarulli/nvcode
 --
 
+require('settings')
 require('plugins')
 require('keymappings')
-require('settings')
 require('colorscheme')
 require('utils')
 
@@ -45,6 +45,7 @@ require('lsp.go-ls')
 require('lsp.html-ls')
 require('lsp.json-ls')
 require('lsp.lua-ls')
+require('lsp.python-ls')
 require('lsp.ruby-ls')
 require('lsp.terraform-ls')
 require('lsp.ts-ls')

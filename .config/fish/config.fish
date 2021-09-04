@@ -1,6 +1,9 @@
 # homebrew is in a different location on apple silicon
 /opt/homebrew/bin/brew shellenv | source
 
+# rbenv setup needs to be sourced after brew setup
+source ~/.config/fish/rbenv.fish
+
 # if there's no node on the path and there's an .nvmrc, run nvm
 if [ ! (which node) ] && [ -n .nvmrc ]
     nvm

@@ -1,5 +1,4 @@
 alias ..='cd ..'
-alias \+x='chmod +x'
 alias ag=tag
 alias bat='bat --theme="base16"'
 alias cat=bat
@@ -13,8 +12,12 @@ alias lg=lazygit
 alias ll='ls -Al'
 alias psgrep='pgrep -fl'
 alias tag='/usr/local/bin/tag "$argv"; source /tmp/tag_aliases 2>/dev/null'
-alias tf=terraform
+alias terraform=terraform-v0.12.29
+alias tf=terraform-v0.12.29
 alias tmux='tmux -2'
+alias tm='tmux -2 new-session -A -s 0'
 alias uuidgen='uuidgen | tr "[:upper:]" "[:lower:]"'
+alias urldecode='python3 -c "import sys, urllib.parse as ul; print(ul.unquote_plus(sys.argv[1]))"'
+alias urlencode='python3 -c "import sys, urllib.parse as ul; print (ul.quote_plus(sys.argv[1]))"'
 alias vim=nvim
 alias yolog=gl

@@ -3,11 +3,11 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
-[includeIf "gitdir:/Users/esherman/.dotgit"]
+[includeIf "gitdir:~/.dotgit"]
     path = .gitconfig-personal
-[includeIf "gitdir:/Users/esherman/code/pgi/"]
+[includeIf "gitdir:~/code/pgi/"]
     path = .gitconfig-pgi
-[includeIf "gitdir:/Users/esherman/code/personal/"]
+[includeIf "gitdir:~/code/personal/"]
     path = .gitconfig-personal
 [core]
 	excludesfile = ~/.gitignore_global
@@ -26,3 +26,5 @@
 [mergetool "bcomp"]
   trustExitCode = true
   cmd = "/usr/local/bin/bcomp" \"$LOCAL\" \"$REMOTE\" \"$BASE\" \"$MERGED\"
+[pull]
+	rebase = false
