@@ -11,7 +11,14 @@ an executable
 -- general
 lvim.log.level = "warn"
 lvim.format_on_save = true
-lvim.colorscheme = "onedarker"
+lvim.colorscheme = "base16-tomorrow-night"
+lvim.transparent_window = true
+vim.opt.relativenumber = true
+lvim.line_wrap_cursor_movement = false
+vim.opt.undofile = false
+lvim.lsp.document_highlight = false
+vim.opt.shell = "bash" -- let vim use bash for max compatibility, fish breaks noninteractive flows
+vim.opt.inccommand = "split" -- show live previews of substitutions
 
 -- keymappings [view all the defaults by pressing <leader>Lk]
 lvim.leader = "space"
@@ -58,6 +65,22 @@ lvim.builtin.nvimtree.show_icons.git = 0
 lvim.builtin.treesitter.ensure_installed = "maintained"
 lvim.builtin.treesitter.ignore_install = { "haskell" }
 lvim.builtin.treesitter.highlight.enabled = true
+
+lvim.builtin.bufferline.on_config_done = function ()
+  vim.api.nvim_exec([[
+  let bufferline = get(g:, 'bufferline', {})
+  let bufferline.icons = v:true
+  "let bufferline.closable = v:false
+  "let bufferline.clickable = v:false
+  let bufferline.no_name_title = '[no name]'
+  "let bufferline.icon_separator_active = '▎'
+  "let bufferline.icon_separator_inactive = '▎'
+  let bufferline.icon_separator_active = ''
+  let bufferline.icon_separator_inactive = ''
+  "let bufferline.icon_close_tab = ' '
+  let bufferline.icon_close_tab_modified = '●'
+    ]], false)
+end
 
 -- generic LSP settings
 -- you can set a custom on_attach function that will be used for all the language servers
@@ -106,6 +129,24 @@ lvim.builtin.treesitter.highlight.enabled = true
 --       cmd = "TroubleToggle",
 --     },
 -- }
+lvim.plugins = {
+  {"RRethy/nvim-base16"},
+  {"kevinhwang91/nvim-bqf"},
+  {
+    "unblevable/quick-scope",
+    config = function()
+      -- The default behavior is to always decorate the line with highlights.
+      -- Trigger a highlight in the appropriate direction only when pressing these keys:
+      vim.g.qs_highlight_on_keys = {'f', 'F', 't', 'T'}
+      vim.api.nvim_exec(
+        [[
+        highlight link QuickScopePrimary   Search
+        highlight link QuickScopeSecondary Error
+        ]], false)
+    end
+  },
+  {"psliwka/vim-smoothie"},
+}
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
 -- lvim.autocommands.custom_groups = {
