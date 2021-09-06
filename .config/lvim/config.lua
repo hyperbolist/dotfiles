@@ -79,6 +79,13 @@ lvim.builtin.bufferline.on_config_done = function ()
   let bufferline.icon_separator_inactive = ''
   "let bufferline.icon_close_tab = ' '
   let bufferline.icon_close_tab_modified = '●'
+
+  hi BufferCurrent        guifg=#ffffff guibg=#373b41
+  hi BufferCurrentIcon                  guibg=#373b41
+  hi BufferCurrentIndex   guifg=#81a2be guibg=#373b41
+  hi BufferCurrentMod     guifg=#f0c674 guibg=#373b41
+  hi BufferCurrentSign    guifg=#81a2be guibg=#373b41
+  hi BufferCurrentTarget  guifg=#ff0000 guibg=#373b41
     ]], false)
 end
 
