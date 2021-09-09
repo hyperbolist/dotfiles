@@ -89,6 +89,55 @@ lvim.builtin.bufferline.on_config_done = function ()
     ]], false)
 end
 
+local components = require "core.lualine.components"
+lvim.builtin.lualine.style = "none"
+lvim.builtin.lualine.options = {
+  icons_enabled = true,
+  component_separators = { "", "" },
+  section_separators = { "", "" },
+  disabled_filetypes = { "dashboard", "NvimTree", "Outline" },
+}
+lvim.builtin.lualine.sections.lualine_a = {
+  "mode",
+}
+lvim.builtin.lualine.sections.lualine_b = {
+  components.branch,
+  {
+    'filename',
+    file_status = false, -- displays file status (readonly status, modified status)
+    path = 1 -- 0 = just filename, 1 = relative path, 2 = absolute path
+  },
+}
+lvim.builtin.lualine.sections.lualine_c = {
+  components.diff,
+  components.python_env,
+}
+lvim.builtin.lualine.sections.lualine_x = {
+  components.diagnostics,
+  components.treesitter,
+  components.lsp,
+  components.filetype,
+}
+lvim.builtin.lualine.sections.lualine_y = {
+  "progress"
+}
+lvim.builtin.lualine.sections.lualine_z = {
+  "location"
+}
+lvim.builtin.lualine.inactive_sections = {
+  lualine_a = {
+    "filename",
+  },
+  lualine_b = {},
+  lualine_c = {},
+  lualine_x = {},
+  lualine_y = {},
+  lualine_z = {},
+}
+lvim.builtin.lualine.tabline = {}
+lvim.builtin.lualine.extensions = { "nvim-tree" }
+lvim.builtin.lualine.options.theme = "powerline"
+
 -- generic LSP settings
 -- you can set a custom on_attach function that will be used for all the language servers
 -- See <https://github.com/neovim/nvim-lspconfig#keybindings-and-completion>
