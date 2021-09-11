@@ -177,6 +177,18 @@ lvim.builtin.lualine.options.theme = "powerline"
 --   }
 -- }
 
+lvim.lang.python.formatters = {
+  {
+    exe = "black",
+  }
+}
+
+lvim.lang.python.linters = {
+  {
+    exe = "flake8",
+  }
+}
+
 -- Additional Plugins
 -- lvim.plugins = {
 --     {"folke/tokyonight.nvim"},
