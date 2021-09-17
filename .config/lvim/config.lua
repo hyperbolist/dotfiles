@@ -93,8 +93,8 @@ local components = require "core.lualine.components"
 lvim.builtin.lualine.style = "none"
 lvim.builtin.lualine.options = {
   icons_enabled = true,
-  component_separators = { "", "" },
-  section_separators = { "", "" },
+  component_separators = { left = "", right = "" },
+  section_separators = { left = "", right = "" },
   disabled_filetypes = { "dashboard", "NvimTree", "Outline" },
 }
 lvim.builtin.lualine.sections.lualine_a = {
@@ -114,7 +114,6 @@ lvim.builtin.lualine.sections.lualine_c = {
 }
 lvim.builtin.lualine.sections.lualine_x = {
   components.diagnostics,
-  components.treesitter,
   components.lsp,
   components.filetype,
 }
