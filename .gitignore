@@ -4,3 +4,4 @@
 .config/nvim/session/
 .config/ranger/plugins/__init__.py
 .config/ranger/plugins/__pycache__/
+.config/lvim/plugin/packer_compiled.lua
