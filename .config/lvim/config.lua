@@ -52,6 +52,8 @@ lvim.builtin.which_key.mappings["t"] = {
   q = { "<cmd>Trouble quickfix<cr>", "QuickFix" },
   l = { "<cmd>Trouble loclist<cr>", "LocationList" },
   w = { "<cmd>Trouble lsp_workspace_diagnostics<cr>", "Diagnostics" },
+  c = { "<cmd>TroubleClose<cr>", "Close" },
+  t = { "<cmd>TroubleToggle<cr>", "Toggle" },
 }
 
 -- TODO: User Config for predefined plugins
