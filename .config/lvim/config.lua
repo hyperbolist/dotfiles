@@ -139,6 +139,10 @@ lvim.builtin.lualine.tabline = {}
 lvim.builtin.lualine.extensions = { "nvim-tree" }
 lvim.builtin.lualine.options.theme = "powerline"
 
+lvim.builtin.telescope.defaults.layout_config = {
+  preview_cutoff = 10,
+}
+
 -- generic LSP settings
 -- you can set a custom on_attach function that will be used for all the language servers
 -- See <https://github.com/neovim/nvim-lspconfig#keybindings-and-completion>
