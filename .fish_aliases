@@ -22,4 +22,4 @@ alias tm='tmux -2 new-session -A -s 0'
 alias uuidgen='uuidgen | tr "[:upper:]" "[:lower:]"'
 alias urldecode='python3 -c "import sys, urllib.parse as ul; print(ul.unquote_plus(sys.argv[1]))"'
 alias urlencode='python3 -c "import sys, urllib.parse as ul; print (ul.quote_plus(sys.argv[1]))"'
-alias vim='TERM=xterm-kitty lvim'
+alias vim=lvim
