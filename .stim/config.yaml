@@ -8,6 +8,6 @@ aws:
 vault-address: https://vault.pgi-tools.com
 vault-initial-token-duration: 8h
 vault-username: esherman
-kube:
-    config:
-        cluster-filter: icekube.net
+# kube:
+#     config:
+#         cluster-filter: icekube.net
