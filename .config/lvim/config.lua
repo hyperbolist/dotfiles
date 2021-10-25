@@ -266,6 +266,13 @@ lvim.plugins = {
     end
   },
   {'dkarter/bullets.vim'},
+  { "iamcco/markdown-preview.nvim",
+    run = "cd app && npm install",
+    setup = function()
+      vim.g.mkdp_filetypes = { "markdown" }
+    end,
+    ft = { "markdown" },
+  },
 }
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
