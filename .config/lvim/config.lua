@@ -21,6 +21,7 @@ lvim.lsp.document_highlight = false
 vim.opt.shell = "bash" -- let vim use bash for max compatibility, fish breaks noninteractive flows
 vim.opt.inccommand = "split" -- show live previews of substitutions
 vim.opt.cmdheight = 1 -- 2 felt like a strange default to me
+vim.g.markdown_folding = 1 -- (un)fold with normal-z
 
 -- keymappings [view all the defaults by pressing <leader>Lk]
 lvim.leader = "space"
@@ -256,9 +257,22 @@ lvim.plugins = {
     end
   },
   {"psliwka/vim-smoothie"},
+  {'jakewvincent/mkdnflow.nvim',
+    config = function()
+      require('mkdnflow').setup({
+        evaluate_prefix = false,
+        new_file_prefix = ''
+      })
+    end
+  },
+  {'dkarter/bullets.vim'},
 }
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
 -- lvim.autocommands.custom_groups = {
 --   { "BufWinEnter", "*.lua", "setlocal ts=8 sw=8" },
 -- }
+
+lvim.autocommands.custom_groups = {
+  { "FileType", "markdown", "setlocal foldlevel=99"},
+}
