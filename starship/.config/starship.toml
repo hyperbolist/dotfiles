@@ -1,0 +1,22 @@
+[aws]
+disabled = false
+force_display = true
+
+[docker_context]
+disabled = true
+
+[gcloud]
+disabled = true
+
+[git_branch]
+symbol = " "
+
+[helm]
+disabled = true
+
+[kubernetes]
+disabled = false
+style = "yellow"
+
+[nodejs]
+detect_files = ["package.json", ".node-version"]

@@ -1,0 +1,45 @@
+alias bashly='docker run --rm -it --user (id -u):(id -g) --volume "$PWD:/app" dannyben/bashly'
+alias bat='bat --theme="base16"'
+alias cat=bat
+alias cp='cp -i'
+alias dotenv=". (sed 's/^/export /' .env | psub)"
+alias exa='exa --icons'
+alias gam='~/bin/gam/gam'
+# alias gd='git diff'
+function gd; git diff $argv | dunk | less -RXF; end
+alias git='gpg-connect-agent UPDATESTARTUPTTY /bye > /dev/null && command git'
+alias gl='git log --all --decorate --oneline --graph'
+alias gs='git status'
+alias k=kubectl
+alias la='exa --all'
+alias lg='git fetch && lazygit'
+alias ll='exa --all --long --octal-permissions --git'
+alias lower='tr "[:upper:]" "[:lower:]"'
+alias ls='exa'
+alias mermaid='npx -p @mermaid-js/mermaid-cli mmdc'
+alias mv='mv -i'
+alias notes='vim ~/code/notes/readme.md'
+alias psgrep='pgrep -fl'
+alias rm='rm -i'
+alias s=scratch
+alias scratch='vim ~/code/notes/scratch.md'
+alias ssh='gpg-connect-agent UPDATESTARTUPTTY /bye > /dev/null && command ssh'
+alias stern='stern --exclude-container istio'
+alias tf='terraform'
+alias tm='tmux -2 new-session -A -s 0'
+alias upper='tr "[:lower:]" "[:upper:]"'
+alias uuidgen='uuidgen | lower'
+alias urldecode='python3 -c "import sys, urllib.parse as ul; print(ul.unquote_plus(sys.argv[1]))"'
+alias urlencode='python3 -c "import sys, urllib.parse as ul; print (ul.quote_plus(sys.argv[1]))"'
+alias vim=nvim
+
+# extract column
+alias first="awk '{print \$1}'"
+alias second="awk '{print \$2}'"
+alias third="awk '{print \$3}'"
+alias fourth="awk '{print \$4}'"
+alias fifth="awk '{print \$5}'"
+alias sixth="awk '{print \$6}'"
+alias seventh="awk '{print \$7}'"
+alias eighth="awk '{print \$8}'"
+alias ninth="awk '{print \$9}'"

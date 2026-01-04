@@ -1,0 +1,34 @@
+[includeIf "gitdir:~/code/"]
+	path = .gitconfig-randori
+[includeIf "gitdir:~/dotfiles/"]
+	path = .gitconfig-randori
+[includeIf "gitdir:~/code/oss/"]
+	path = .gitconfig-personal
+[commit]
+	gpgsign = true
+[core]
+	excludesfile = ~/.gitignore_global
+	autocrlf = input
+	hooksPath = /Users/esherman/.config/git/randori-hooks
+[pull]
+	rebase = false
+[init]
+	defaultBranch = main
+[diff]
+	tool = bc3
+[merge]
+	tool = bc3
+[mergetool "bc3"]
+	trustExitCode = true
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[url "ssh://git@github.com/RandoriDev/"]
+	insteadOf = https://github.com/RandoriDev/
+[safe]
+	directory = *
+[user]
+	email = eric.sherman@ibm.com
+	name = Eric Sherman
