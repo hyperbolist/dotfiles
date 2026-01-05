@@ -1,34 +1,26 @@
 [includeIf "gitdir:~/code/"]
-	path = .gitconfig-randori
+  path = .gitconfig-fairwinds
 [includeIf "gitdir:~/dotfiles/"]
-	path = .gitconfig-randori
+  path = .gitconfig-personal
 [includeIf "gitdir:~/code/oss/"]
-	path = .gitconfig-personal
-[commit]
-	gpgsign = true
+  path = .gitconfig-personal
 [core]
-	excludesfile = ~/.gitignore_global
-	autocrlf = input
-	hooksPath = /Users/esherman/.config/git/randori-hooks
+  excludesfile = ~/.gitignore_global
+  autocrlf = input
 [pull]
-	rebase = false
+  rebase = false
 [init]
-	defaultBranch = main
+  defaultBranch = main
 [diff]
-	tool = bc3
+  tool = meld
+[difftool]
+  prompt = false
+[difftool "meld"]
+  cmd = meld "$LOCAL" "$REMOTE"
 [merge]
-	tool = bc3
-[mergetool "bc3"]
-	trustExitCode = true
-[filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
-[url "ssh://git@github.com/RandoriDev/"]
-	insteadOf = https://github.com/RandoriDev/
-[safe]
-	directory = *
-[user]
-	email = eric.sherman@ibm.com
-	name = Eric Sherman
+  tool = meld
+[mergetool]
+  prompt = false
+[mergetool "meld"]
+  cmd = meld "$LOCAL" "$BASE" "$REMOTE" --output="$MERGED"
+  keepBackup = false
