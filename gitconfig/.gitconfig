@@ -1,5 +1,7 @@
 [includeIf "gitdir:~/code/"]
   path = .gitconfig-fairwinds
+[includeIf "gitdir:~/workspace/"]
+  path = .gitconfig-fairwinds
 [includeIf "gitdir:~/dotfiles/"]
   path = .gitconfig-personal
 [includeIf "gitdir:~/code/oss/"]

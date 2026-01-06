@@ -1,22 +1,29 @@
+# show aws
 [aws]
 disabled = false
 force_display = true
 
-[docker_context]
-disabled = true
-
+# hide gcloud for now
 [gcloud]
 disabled = true
 
+# mere preference
 [git_branch]
 symbol = " "
 
+# helm module offers no value to me
 [helm]
 disabled = true
 
+# show kubernetes
 [kubernetes]
 disabled = false
 style = "yellow"
 
-[nodejs]
-detect_files = ["package.json", ".node-version"]
+# python module offers no value to me
+[python]
+disabled = true
+
+# terraform module offers no value to me
+[terraform]
+disabled = true
