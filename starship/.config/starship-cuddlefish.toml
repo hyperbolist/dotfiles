@@ -1,0 +1,46 @@
+# > By default, the env_var module will simply show all env_var modules in the order they were defined.
+# via https://starship.rs/config/#environment-variable
+# so we build up our little cuddlefish module to look like
+# [⛵PROJECT::INVENTORY]
+# by plucking them out and putting them in front of the rest of the prompt in the top-level format string
+# as explained here https://starship.rs/config/#prompt
+format = '${env_var.PROJECT}${env_var.INVENTORY}$all'
+
+# kubernetes cluster
+[env_var.PROJECT]
+style = "yellow"
+format = '\[⛵[$env_value]($style)::' 
+
+# cloud account/project
+[env_var.INVENTORY]
+style = "green"
+format = '[$env_value]($style)\] '
+
+# hide aws module in favor of INVENTORY environment variable
+[aws]
+disabled = true
+
+# hide gcloud module in favor of INVENTORY environment variable
+[gcloud]
+disabled = true
+
+# mere preference
+[git_branch]
+symbol = " "
+
+# helm module offers no value to me
+[helm]
+disabled = true
+
+# hide kubernetes module in favor of PROJECT environment variable
+[kubernetes]
+disabled = true
+style = "yellow"
+
+# python module offers no value to me
+[python]
+disabled = true
+
+# terraform module offers no value to me
+[terraform]
+disabled = true
