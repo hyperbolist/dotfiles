@@ -1,9 +1,19 @@
+# prepend the whole thing with the value of INVENTORY, if present
+format = '${env_var.INVENTORY}$all'
+
 # show aws
 [aws]
 disabled = false
 force_display = true
+style = "yellow"
+symbol = ''
 
-# hide gcloud for now
+# cloud identifier
+[env_var.INVENTORY]
+style = "green"
+format = '[$env_value]($style) '
+
+# hide gcloud
 [gcloud]
 disabled = true
 
@@ -15,10 +25,17 @@ symbol = " "
 [helm]
 disabled = true
 
-# show kubernetes
+# kubernetes with shortened context names
 [kubernetes]
 disabled = false
 style = "yellow"
+symbol = ''
+[[kubernetes.contexts]]
+context_pattern = 'arn.*\/(?P<cluster>[\w\/-]+)'
+context_alias = "$cluster"
+[[kubernetes.contexts]]
+context_pattern = "gke_.*_(?P<cluster>[\\w-]+)"
+context_alias = "$cluster"
 
 # python module offers no value to me
 [python]
