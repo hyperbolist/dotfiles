@@ -673,6 +673,14 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
+-- ensure treesitter starts in markdown buffers
+vim.api.nvim_create_autocmd({ "FileType" }, {
+  pattern = { "markdown" },
+  callback = function()
+    pcall(vim.treesitter.start)
+  end,
+})
+
 -- Fix conceallevel for json files
 vim.api.nvim_create_autocmd({ "FileType" }, {
   group = augroup("json_conceal"),
@@ -695,4 +703,12 @@ vim.api.nvim_create_autocmd('User', {
     end
     vim.b[data.buf].minigit_summary_string = out
   end,
+})
+
+-- fix .tftpl file support
+-- NOTE: only fixes highlighting at the moment
+vim.filetype.add({
+  extension = {
+    ['tftpl'] = 'yaml.terraform',
+  },
 })
