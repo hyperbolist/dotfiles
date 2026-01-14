@@ -37,6 +37,10 @@ context_alias = "$cluster"
 context_pattern = "gke_.*_(?P<cluster>[\\w-]+)"
 context_alias = "$cluster"
 
+# nodejs module offers no value to me
+[nodejs]
+disabled = true
+
 # python module offers no value to me
 [python]
 disabled = true
