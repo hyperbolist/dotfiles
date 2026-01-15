@@ -25,7 +25,6 @@ alias s=scratch
 alias scratch='vim ~/code/notes/scratch.md'
 # alias ssh='gpg-connect-agent UPDATESTARTUPTTY /bye > /dev/null && command ssh'
 # alias stern='stern --exclude-container istio'
-alias tf='terraform'
 alias tm='tmux -2 new-session -A -s 0'
 alias upper='tr "[:lower:]" "[:upper:]"'
 alias uuidgen='uuidgen | lower'
