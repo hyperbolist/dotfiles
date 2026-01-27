@@ -5,6 +5,7 @@ set -gx fish_user_paths $HOME/.local/bin $fish_user_paths
 set -gx fish_user_paths $HOME/go/bin $fish_user_paths
 set -gx fish_user_paths $HOME/bin $fish_user_paths
 set -gx fish_user_paths $HOME/.local/share/bob/nvim-bin $fish_user_paths
+set -gx fish_user_paths $HOMEBREW_PREFIX/opt/forgit/bin $fish_user_paths
 
 set -gx EDITOR vim
 set -gx LESSHISTFILE /dev/null
@@ -14,3 +15,4 @@ set -gx DOCKER_DEFAULT_PLATFORM linux/amd64
 set -gx USE_GKE_GCLOUD_AUTH_PLUGIN True
 set -gx RIPGREP_CONFIG_PATH $HOME/.ripgreprc
 set -gx GIT_SSH_COMMAND "ssh -o ControlMaster=no -o BatchMode=yes"
+set -gx FORGIT_FZF_DEFAULT_OPTS "--height '100%' --bind='page-up:preview-up,page-down:preview-down,ctrl-/:change-preview-window(right:99%|right:60%)'"

@@ -9,7 +9,7 @@
 [core]
   excludesfile = ~/.gitignore_global
   autocrlf = input
-  pager = delta
+  pager = bash -c 'delta --width ${FZF_PREVIEW_COLUMNS:-$COLUMNS}'
 [pull]
   rebase = false
 [init]
