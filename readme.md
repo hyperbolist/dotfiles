@@ -4,7 +4,7 @@ Managed by [gnu stow](https://www.gnu.org/software/stow/).
 
 ## Quickstart
 
-```
+```bash
 # install homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 

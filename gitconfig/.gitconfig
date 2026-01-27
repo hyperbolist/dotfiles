@@ -9,20 +9,39 @@
 [core]
   excludesfile = ~/.gitignore_global
   autocrlf = input
+  pager = delta
 [pull]
   rebase = false
 [init]
   defaultBranch = main
 [diff]
-  tool = meld
+  colorMoved = default
 [difftool]
   prompt = false
-[difftool "meld"]
-  cmd = meld "$LOCAL" "$REMOTE"
 [merge]
-  tool = meld
+  conflictStyle = zdiff3
 [mergetool]
   prompt = false
-[mergetool "meld"]
-  cmd = meld "$LOCAL" "$BASE" "$REMOTE" --output="$MERGED"
-  keepBackup = false
+[interactive]
+  diffFilter = delta --color-only
+[delta]
+  dark = true
+  navigate = true
+  syntax-theme = base16
+  true-color = always
+  file-style = white
+  file-decoration-style = blue overline
+  line-numbers = true
+  line-numbers-minus-style = "#c27d78"
+  line-numbers-plus-style = "#86c67e"
+  line-numbers-left-format = "{nm:>4} "
+  line-numbers-right-format = "{np:>4} "
+  minus-style = syntax "#3c211b"
+  plus-style = syntax "#243e1e"
+  minus-emph-style = syntax "#6b1f18"
+  plus-emph-style = syntax "#2e6f24"
+  minus-empty-line-marker-style = black black
+  plus-empty-line-marker-style = black black
+  side-by-side = true
+  hunk-header-style = file line-number syntax
+  zero-style = syntax

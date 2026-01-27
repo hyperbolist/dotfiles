@@ -5,8 +5,7 @@ alias cat=bat
 alias cp='cp -i'
 alias dotenv=". (sed 's/^/export /' .env | psub)"
 alias eza='eza --icons'
-# alias gd='git diff'
-function gd; git diff $argv | dunk | less -RXF; end
+alias gd='git diff'
 # alias git='gpg-connect-agent UPDATESTARTUPTTY /bye > /dev/null && command git'
 alias gl='git log --all --decorate --oneline --graph'
 alias gs='git status'
