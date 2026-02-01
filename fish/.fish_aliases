@@ -1,8 +1,10 @@
 alias argocd='argocd --core'
 alias bashly='docker run --rm -it --user (id -u):(id -g) --volume "$PWD:/app" dannyben/bashly'
 alias bat='bat --theme="base16"'
+alias c='cdl'
 alias cat=bat
 alias cp='cp -i'
+alias d='delta'
 alias dotenv=". (sed 's/^/export /' .env | psub)"
 alias eza='eza --icons'
 alias gd='git diff'
