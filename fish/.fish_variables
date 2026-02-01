@@ -9,7 +9,7 @@ set -gx fish_user_paths $HOMEBREW_PREFIX/opt/forgit/bin $fish_user_paths
 
 set -gx EDITOR vim
 set -gx LESSHISTFILE /dev/null
-set -gx MANPAGER "sh -c 'col -bx | bat -l man -p'"
+set -gx MANPAGER "sh -c 'col -bx | bat --theme=base16 -l man -p'"
 set -gx PAGER less -FiRswX
 set -gx DOCKER_DEFAULT_PLATFORM linux/amd64
 set -gx USE_GKE_GCLOUD_AUTH_PLUGIN True
