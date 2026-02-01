@@ -72,10 +72,10 @@ function cdl -a cmd -d 'Tool to build, change, and version infrastructure'
         case push
             switch "$argv[2]"
                 case '' env
-                    # push into tmux global env, prefix with `CDL_` to prevent unintended collisions
+                    # push into tmux session env, prefix with `CDL_` to prevent unintended collisions
                     for cuddlefish_env_name in $cuddlefish_env_names
-                        set tmux_global_env_name "CDL_$cuddlefish_env_name"
-                        tmux setenv -g $tmux_global_env_name "$$cuddlefish_env_name"
+                        set tmux_env_name "CDL_$cuddlefish_env_name"
+                        tmux setenv $tmux_env_name "$$cuddlefish_env_name"
                     end
                 case '*'
                     echo nope
@@ -84,13 +84,13 @@ function cdl -a cmd -d 'Tool to build, change, and version infrastructure'
         case pull
             switch "$argv[2]"
                 case '' env
-                    # pull from tmux global env and export into local shell env
+                    # pull from tmux session env and export into local shell env
                     for cuddlefish_env_name in $cuddlefish_env_names
-                        set tmux_global_env_name "CDL_$cuddlefish_env_name"
-                        # pull afresh from tmux global env before exporting into local shell env
-                        export (tmux show-environment -g $tmux_global_env_name)
+                        set tmux_env_name "CDL_$cuddlefish_env_name"
+                        # pull afresh from tmux session env before exporting into local shell env
+                        export (tmux show-environment $tmux_env_name 2>/dev/null || echo NOTFOUND)
                         # export into local shell env
-                        export $cuddlefish_env_name="$$tmux_global_env_name"
+                        export $cuddlefish_env_name="$$tmux_env_name"
                     end
                     # add cuddlefish paths
                     set -gx fish_user_paths $HOME/.cuddlefish/venv/bin $fish_user_paths
@@ -106,14 +106,14 @@ function cdl -a cmd -d 'Tool to build, change, and version infrastructure'
                     # unset local shell env
                     for cuddlefish_env_name in $cuddlefish_env_names
                         set -e "$cuddlefish_env_name"
-                        set tmux_global_env_name "CDL_$cuddlefish_env_name"
-                        set -e $tmux_global_env_name
+                        set tmux_env_name "CDL_$cuddlefish_env_name"
+                        set -e $tmux_env_name
                     end
                 case tmux
-                    # unset tmux global env
+                    # unset tmux session env
                     for cuddlefish_env_name in $cuddlefish_env_names
-                        set tmux_global_env_name "CDL_$cuddlefish_env_name"
-                        tmux setenv -gu $tmux_global_env_name
+                        set tmux_env_name "CDL_$cuddlefish_env_name"
+                        tmux setenv -u $tmux_env_name
                     end
                 case '*'
                     echo nope
