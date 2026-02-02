@@ -20,7 +20,7 @@ function tmux-session -a cmd -d zoinks
                     --full-path \
                     --base-directory $HOME |
                   sed "s:^$HOME/::" |
-                  fzf)
+                  fzf --input-border="line" --input-label="Open")
                 if [ "" = "$path" ]
                     return
                 end
@@ -40,7 +40,7 @@ function tmux-session -a cmd -d zoinks
             set name (tmux list-sessions 2>/dev/null |
                 sed -E 's/:.*$//' |
                 grep -vE "^$current_session\$" |
-                fzf)
+                fzf --input-border="line" --input-label="Select")
             if [ "" = "$name" ]
                 return
             end
@@ -52,7 +52,7 @@ function tmux-session -a cmd -d zoinks
             set name (tmux list-sessions 2>/dev/null |
                 sed -E 's/:.*$//' |
                 grep -vE "^$current_session\$" |
-                fzf)
+                fzf --input-border="line" --input-label="Destroy")
             if [ "" = "$name" ]
                 return
             end
