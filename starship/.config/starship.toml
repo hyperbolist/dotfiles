@@ -48,3 +48,7 @@ disabled = true
 # terraform module offers no value to me
 [terraform]
 disabled = true
+
+# quarto module offers no value to me
+[quarto]
+disabled = true

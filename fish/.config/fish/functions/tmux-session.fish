@@ -27,7 +27,7 @@ function tmux-session -a cmd -d zoinks
                 set path "$HOME/$path"
             end
 
-            set name (basename $path)
+            set name (basename $path | tr '.' '_')
 
             if ! tmux has-session -t $name 2>/dev/null
                 tmux new-session -ds $name -c $path
@@ -57,7 +57,8 @@ function tmux-session -a cmd -d zoinks
                 return
             end
 
-            tmux kill-session -t $name
+            tmux list-panes -t $name -F '#{pane_pid}' | xargs -I{} kill -TERM {}
+            tmux kill-session -t $name 2>/dev/null
 
     end
 end
