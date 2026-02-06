@@ -58,7 +58,8 @@ function tmux-session -a cmd -d zoinks
             end
 
             tmux list-panes -t $name -F '#{pane_pid}' | xargs -I{} kill -TERM {}
-            tmux kill-session -t $name 2>/dev/null
+            tmux kill-session -t $name ^/dev/null
+            true
 
     end
 end
