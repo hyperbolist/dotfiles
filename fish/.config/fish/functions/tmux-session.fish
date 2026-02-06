@@ -58,8 +58,10 @@ function tmux-session -a cmd -d zoinks
             end
 
             tmux list-panes -t $name -F '#{pane_pid}' | xargs -I{} kill -TERM {}
-            tmux kill-session -t $name ^/dev/null
-            true
+            # NOTE: maybe we should just let the session naturally evaporate when all of its panes die?
+            # NOTE: ...and if any panes are still sticking around, we can at least inspect why
+            # tmux kill-session -t $name ^/dev/null
+            # true
 
     end
 end
