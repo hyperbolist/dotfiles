@@ -1,4 +1,3 @@
-# TODO: fix neovim's fish indentation
 function cdl -a cmd -d 'Tool to build, change, and version infrastructure'
 
     # cuddlefish-managed or cuddlefish-concerned environment variables
